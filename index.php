@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'App/Configuracion.php';
 include_once 'App/Conexion.php';
 include_once 'App/Modelos/Persona.php';
