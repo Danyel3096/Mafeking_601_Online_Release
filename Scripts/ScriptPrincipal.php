@@ -19,11 +19,11 @@ $.ajax({
    	success:function(datos){
    		if (datos) {
    			var objeto = JSON.parse(datos);
-   			$("#imagen-rama-grupo").prop("src", "Archivos/Imagenes/Ramas/Jefatura/"+objeto[0]['Imagen']);
-   			$("#imagen-rama-manada").prop("src", "Archivos/Imagenes/Ramas/Manada/"+objeto[5]['Imagen']);
-   			$("#imagen-rama-tropa").prop("src", "Archivos/Imagenes/Ramas/Tropa/"+objeto[4]['Imagen']);
-   			$("#imagen-rama-comunidad").prop("src", "Archivos/Imagenes/Ramas/Comunidad/"+objeto[3]['Imagen']);
-   			$("#imagen-rama-clan").prop("src", "Archivos/Imagenes/Ramas/Clan/"+objeto[2]['Imagen']);
+   			$("#imagen-rama-grupo").prop("src", "Archivos/Imagenes/Ramas/Jefatura/"+objeto[0]['imagen']);
+   			$("#imagen-rama-manada").prop("src", "Archivos/Imagenes/Ramas/Manada/"+objeto[5]['imagen']);
+   			$("#imagen-rama-tropa").prop("src", "Archivos/Imagenes/Ramas/Tropa/"+objeto[4]['imagen']);
+   			$("#imagen-rama-comunidad").prop("src", "Archivos/Imagenes/Ramas/Comunidad/"+objeto[3]['imagen']);
+   			$("#imagen-rama-clan").prop("src", "Archivos/Imagenes/Ramas/Clan/"+objeto[2]['imagen']);
    		}
     }
 });
