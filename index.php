@@ -19,7 +19,7 @@ $partes_ruta = array_filter($partes_ruta);
 $partes_ruta = array_slice($partes_ruta, 0);
 $ruta_elegida = 'Vistas/404.php';
 
-if($partes_ruta[0] == 'MafekingOnline') {
+if($partes_ruta[0] == 'mafeking-601-online.herokuapp.com') {
 	if(count($partes_ruta) == 1) {
 		$ruta_elegida = 'Vistas/VistaPrincipal.php';
 	} else if(count($partes_ruta) == 2) {
