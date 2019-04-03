@@ -1,0 +1,26 @@
+body {
+    background-color: snow !important;
+}
+
+.nav-link:link {/*enlace sin visitar*/
+	color: gray !important;
+}
+.nav-link:visited {/*enlace visitado*/
+	color: silver !important;
+}
+.nav-link:active {/*enlace clickado*/
+	color: dimgray !important;
+}
+
+.jumbotron {
+	background-color: gray !important;
+	color: white !important;
+}
+
+.card-title {
+	background-color: dimgray !important;
+}
+
+#palabra-clave {
+	width: 448px !important;
+}

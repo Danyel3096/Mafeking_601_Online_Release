@@ -1,0 +1,96 @@
+body {
+    background-color: snow !important;
+}
+
+.enlaces-nav:link {/*enlace sin visitar*/
+	color: white !important;
+}
+.enlaces-nav:visited {/*enlace visitado*/
+	color: lightcoral !important;
+}
+.enlaces-nav:active {/*enlace clickado*/
+	color: indigo !important;
+}
+.enlaces-nav:hover {/*enlace sobre*/
+    color: coral !important;
+}
+
+.derecha {
+    float: right !important;
+}
+.izquierda {
+    float: left !important;
+}
+
+.jumbotron {
+	background-color: crimson !important;
+	color: white !important;
+}
+
+.card-title {
+	background-color: crimson !important;
+    color: white !important;
+}
+
+#palabra-clave {
+	width: 400px !important;
+}
+
+.inicio-sesion {
+	width: 300px !important;
+}
+
+.carousel-control-next, .carousel-control-prev {
+	z-index: auto !important;
+}
+
+.orgchart { background: #fff; }
+.orgchart td.left, .orgchart td.right, .orgchart td.top { border-color: #aaa; }
+.orgchart td>.down { background-color: #aaa; }
+.orgchart .lines .downLine {
+    background-color: black !important;
+}
+.orgchart .lines .leftLine {
+    border-left: 1px solid black !important;
+}
+.orgchart .lines .rightLine {
+    border-right: 1px solid black !important;
+}
+.orgchart .lines .topLine {
+    border-top: 2px solid black !important;
+}
+.orgchart .grupo .title {
+    background-color: red !important;
+    color: white !important;
+}
+.orgchart .grupo .content {
+    border-color: red !important;
+}
+.orgchart .manada .title {
+    background-color: gold !important;
+    color: white !important;
+}
+.orgchart .manada .content {
+    border-color: gold !important;
+}
+.orgchart .tropa .title {
+    background-color: green !important;
+    color: white !important;
+}
+.orgchart .tropa .content {
+    border-color: green !important;
+}
+.orgchart .comunidad .title {
+    background-color: mediumblue !important;
+    color: white !important;
+}
+.orgchart .comunidad .content {
+    border-color: mediumblue !important;
+}
+.orgchart .clan .title {
+    background-color: crimson !important;
+    color: white !important;
+}
+.orgchart .clan .content {
+    border-color: crimson !important;
+}

@@ -1,0 +1,570 @@
+#img-insignia-evento {
+	width: 200px !important;
+	height: auto !important;
+	margin-bottom: 10px !important;
+}
+
+#ficha-no-permitida {
+	color: darkred !important;
+	font-size: 4em !important;
+}
+#ficha-word-writer {
+	color: blue !important;
+	font-size: 4em !important;
+}
+#ficha-pdf {
+	color: red !important;
+	font-size: 4em !important;
+}
+
+.imagen-recuperada {
+	max-width: inherit !important;
+	max-height: inherit !important;
+}
+
+#imagen-noticia {
+	max-height: 200px !important;
+}
+
+.color-clan {
+	color: red !important;
+}
+
+.color-comunidad {
+	color: darkblue !important;
+}
+
+.color-tropa {
+	color: green !important;
+}
+
+.color-manada {
+	color: gold !important;
+}
+
+.img-vistas {
+	width: 500px !important;
+	height: auto !important;
+}
+
+th {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+
+.linea-tiempo {
+	width: 100% !important;
+	height: 600px !important;
+}
+
+.tema-grupo {
+	background-color: red !important;
+	color: white !important;
+}
+
+.tema-clan {
+	background-color: crimson !important;
+	color: white !important;
+}
+
+.tema-comunidad {
+	background-color: blue !important;
+	color: white !important;
+}
+
+.tema-tropa {
+	background-color: red !important;
+	color: white !important;
+}
+
+.tema-manada {
+	background-color: gold !important;
+	color: black !important;
+}
+
+.espacio-pagina {
+	margin: 100px 0px !important;
+}
+
+.insignias {
+	width: 70px !important;
+	height: 70px !important;
+	margin: auto !important;
+}
+
+h6 {
+	margin: auto !important;
+}
+
+table {
+	border-collapse:collapse;
+	margin: auto !important;
+	width: 100% !important;
+}
+
+th {
+	text-align: center !important;
+	border: 1px solid white !important;
+}
+
+.dropzone .dz-preview .dz-image img {
+	width: inherit !important;
+	height: inherit !important;
+}
+
+label.error {
+	color: red !important;
+	margin: auto !important;
+}
+
+.bordes {
+	border: 1px solid black !important;
+}
+
+.btn-plus {
+	z-index: 20 !important;
+	right: 70px !important;
+	top: 65px !important;
+	position: absolute !important;
+}
+
+.modal-footer {
+	display: inline !important;
+}
+
+#icono-instagram {
+	color: rgb(63, 114, 155) !important;
+}
+
+#icono-youtube {
+	color: rgb(196, 48, 43) !important;
+}
+
+th.sorting, th.sorting_asc, th.sorting_desc {
+	text-align: center !important;
+}
+
+.inicio-gestor {
+	margin-top: 10px !important;
+}
+
+.opciones-gestor {
+	margin-bottom: 10px !important;
+}
+
+#aviso-fila {
+	padding: 5% 0 !important;
+}
+
+#fondo-perfil {
+	width: 740px !important;
+	height: 290px !important;
+}
+
+#foto-perfil {
+	width: 265px !important;
+	height: 290px !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	margin-bottom: 3px !important;
+}
+
+.dropzone {
+	padding: 5px !important;
+}
+
+.dropzone .dz-preview {
+	margin: 1px !important;
+	width: 100% !important;
+	height: 290px !important;
+}
+
+.dz-image {
+	width: inherit !important;
+	height: inherit !important;
+}
+
+.btn-icono {
+	min-width: 80px !important;
+}
+
+.centrar {
+	display: block !important;
+	margin: auto !important;
+}
+
+.navbar {/*BARRA DE NAVEGACION*/
+	position: fixed !important;
+	top: 0px !important;
+	z-index: 1 !important;
+	width: 100% !important;
+	background-color: rgba(0,0,0,0.9) !important;
+}
+.navbar-brand:link, .navbar-brand:visited {/*titulo sin visitar y visitado*/
+	color:red !important;
+}
+.navbar-brand:hover, .navbar-brand:active {/*titulo sobre y clickado*/
+	color:white !important;
+}
+
+.inicio-pagina {
+	margin-top: 56px !important;
+}
+
+.jumbotron {
+	margin-bottom: 1px !important;
+}
+
+ul.lista {
+	list-style-type: none !important;
+}
+
+div .carousel-caption h5 {
+	color: black !important;
+	font-weight: bold !important;
+}
+
+.sin-espaciado-izquierda {
+	padding-left: 0.5px !important;
+}
+
+.sin-espaciado-derecha {
+	padding-right: 0.5px !important;
+}
+
+.menos-espaciado {
+	padding: 5px !important;
+}
+
+.inicio-perfil {
+	margin-top: 66px !important;
+}
+
+.obligatorio {
+	color: red !important;
+	font-weight: bold !important;
+}
+
+.cierre-pagina {
+	width: 1370px !important;
+	background-color: black !important;
+	color: white !important;
+}
+
+.error-404 {
+	color: white !important;
+	background-color: rgba(0,0,0,0.9) !important;
+	margin-bottom: 8px !important;
+}
+
+.ocultar {
+	display: none !important;
+}
+
+.autoria {
+	background-color: white !important;
+	color: black !important;
+}
+
+.logos-scout {/*cierre de pagina*/
+	background-color: indigo !important;
+}
+
+/*
+:link; unvisited link
+:visited; visited link
+:hover; mouse over link
+:active; selected link
+*/
+/*Enlaces compartidos INICIO*/
+
+/*Enlaces compartidos FIN*/
+#carrusel {/*diapositiva principal*/
+	margin: auto !important;
+	margin-bottom: 8px !important;
+}
+
+#carrusel .carousel-inner .carousel-item img {/*imagenes diapositiva principal*/
+	width: 650px !important;
+	height: 400px !important;
+}
+
+.ajuste-diapositiva {
+	width: 650px !important;
+	margin: auto !important;
+}
+
+/*INICIA TOOGLE BUTTON (SWITCH) NOTICIA*/
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: green;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+/*TERMINA TOOGLE BUTTON (SWITCH) NOTICIA*/
+.table thead th {
+	vertical-align: middle !important;
+	text-align: center !important;
+}
+
+.fc-day {
+	background: #f2f2f2 !important;
+}
+
+.partes-gestor-noticias {
+	background-color: deepskyblue !important;
+	color: white !important;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+	background-color: whitesmoke !important;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+	background-color: ivory !important;
+}
+
+.table-striped>tbody>tr>td {
+	border: none !important;
+}
+
+.table-striped>thead>tr>th {
+	border: none !important;
+}
+
+/*tbody:before {
+	content: "-" !important;
+	display: block !important;
+	line-height: 1em !important;
+	color: transparent !important;
+}PONE PROBLEMA CON EL FULLCALENDAR Y SOLO PONE UN ESPACIO DEBAJO DEL THEAD PARA SEPARARLO DEL TBODY*/
+
+.hide{
+       display: none;
+    }
+
+.hoy {
+	background-color: orange !important; 
+}
+
+.evento {
+	background-color: green !important;
+}
+
+.fc-head th:nth-of-type(1) {
+	color: red !important;
+}
+
+.fc-head th:nth-of-type(7) {
+	color: blue !important;
+}
+
+div .fc-basic-view .fc-body .fc-row {
+	min-height: 2em !important;
+}
+
+h1, h2, h3, h4 {
+	text-align: center !important;
+}
+
+/*FORMULARIOS DEL GESTOR*/
+div #usuario {
+	margin: auto !important;
+}
+
+/*TABLAS*/
+/* Cambios sobre la propia tabla */
+#tabla-cierre-pagina {
+	border: none !important;
+}
+
+caption {
+	caption-side: top !important;
+}
+
+table #meses {
+	width: auto !important;
+	border: 1 !important;
+}
+
+table #meses td {
+	font-size: 15px !important;
+}
+/* Modificación de estilos en cabeceras */
+th {
+	text-align:center;
+	background:#000;
+	color:#FFF;
+	text-transform:uppercase;
+}
+/* Modificación de estilos en celdas */
+td {
+	text-align:center;
+	border: none;
+	color:#333;
+	font-size:18px;
+}
+
+.card {
+	margin-bottom: 1px !important;
+}
+
+.card-title {
+	margin-bottom: 1px !important;
+}
+
+
+.card-body {
+	background-color: #F5F5F5 !important;
+}
+
+/*BOTONES*/
+.btn-primary {
+	background-color: deepskyblue !important;
+	border: none !important;
+	margin: auto !important;
+}
+
+/*GESTOR GENERICO*/
+.gg-elemento {
+	color: white !important;
+}
+
+#gg-entradas {
+	background-color: deepskyblue !important;
+}
+
+#gg-comentarios {
+	background-color: #029ac4 !important;
+}
+
+#gg-favoritos {
+	background-color: #394a66 !important;
+}
+
+.formularios-usuario {
+	background-color: lightgray !important;
+	text-align: center !important;
+}
+
+.gestor-auxiliar {
+	text-align: center !important;
+	align-content: center !important;
+	align-items: center !important;
+	padding: auto !important;
+}
+
+.container #taber {
+	width: auto !important;
+}
+
+.btn-subir-ficha {
+	width: 0.1px !important;
+	height: 0.1px !important;
+	opacity: 0 !important;
+	overflow: hidden !important;
+	position: absolute !important;
+	z-index: -1 !important;
+}
+
+#label-ficha-evento {
+	background-color: skyblue !important;
+	color: black !important;
+	padding: 0.5em !important;
+	cursor: pointer !important;
+	bottom: 0px !important;
+	margin-bottom: 25px !important;
+}
+
+#formEventoFicha {
+	bottom: 0px !important;
+	position: absolute !important;
+	margin: 0px 25% !important;
+	width: 200px !important;
+}
+.sidenav {
+    width: 100%;
+    background-color: #111;
+    overflow-x: hidden;
+}
+.sidenav a, .dropdown-btn {/*enlaces y boton desplegable*/
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: silver !important;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+.sidenav a:hover, .dropdown-btn:hover {/*raton sobre el gestor*/
+	color: white !important;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 3px;}
+    .sidenav a {font-size: 18px;}
+}
+.dropdown-container {/*contenido del boton desplegable*/
+    display: none;
+    background-color: #262626;
+}

@@ -1,0 +1,107 @@
+body {
+    background-color: #FFF5EE !important;
+}
+
+.panel-perfil {
+  background-color: white !important;
+}
+
+.enlaces-nav:link {/*enlace sin visitar*/
+	color: white !important;
+}
+.enlaces-nav:visited {/*enlace visitado*/
+	color: crimson !important;
+}
+.enlaces-nav:active {/*enlace clickado*/
+	color: lightcoral !important;
+}
+.enlaces-nav:hover {/*enlace sobre*/
+    color: coral !important;
+}
+
+.jumbotron {/*encabezado de paginas*/
+	background-color: red !important;
+	color: white !important;
+}
+
+.card-title {/*titulo de los cards*/
+	background-color: crimson !important;
+  color: white !important;
+}
+
+/* Fixed sidenav, full height */
+.activo {/*se muestra cuando el boton desplegable esta desplegado*/
+  color: red !important;
+  float: right !important;
+  margin: 5px 0px !important;
+}
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+
+
+#palabra-clave {
+	width: 448px !important;
+}
+
+div.progressBar {
+	overflow: visible !important;
+	color: black !important;
+	background: crimson !important;
+}
+
+ol {
+	padding-left: 20px !important;
+}
+
+/* Sweep To Left ESTO NO SE USA ERA DE PERFIL*/
+.pendiente {
+  /*display: inline-block;*/
+  background: cornsilk;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  	/*list-style-type: none !important;*/
+	margin: 0;
+	padding: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+.pendiente:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: crimson;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.pendiente:hover, .pendiente:focus, .pendiente:active {
+  color: white;
+}
+.pendiente:hover:before, .pendiente:focus:before, .pendiente:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/*ESTO NO SE USA ERA DE PERFIL*/
