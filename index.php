@@ -12,7 +12,7 @@ Conexion :: abrirConexion();
 $conexion = Conexion :: obtenerConexion();
 $sesion_usuario = ControlSesion::sesionIniciada();
 
-$componentes_url = parse_url($_SERVER['REQUEST_URI']);
+$componentes_url = parse_url($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
 $ruta = $componentes_url['path'];
 $partes_ruta = explode('/', $ruta);
 $partes_ruta = array_filter($partes_ruta);
