@@ -7,7 +7,7 @@ define('Clave', 'dfc50fac6ebc8f0b481b061bc45117f7980d9ff1e592f58913a4dc39de00fe8
 define('Puerto_base_datos', '5432');
 
 //RUTAS DE LA WEB
-define('SERVIDOR', 'http://localhost/MafekingOnline');
+define('SERVIDOR', 'https://mafeking-601-online.herokuapp.com');
 define('RUTA_CIERRE_SESION', SERVIDOR.'/Cierre_sesion');
 define('RUTA_INICIO_SESION', SERVIDOR.'/Inicio_sesion');
 define('RUTA_GESTOR' , SERVIDOR.'/Gestor');
