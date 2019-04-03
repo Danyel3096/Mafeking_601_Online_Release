@@ -19,7 +19,7 @@ $ruta_elegida = 'Vistas/404.php';
 if($partes_ruta[0] == 'mafeking-601-online.herokuapp.com') {
 	if(count($partes_ruta) == 1) {
 		$ruta_elegida = 'Vistas/VistaPrincipal.php';
-	} else if(count($partes_ruta) == 4) {
+	} else if(count($partes_ruta) == 3) {
 		switch ($partes_ruta[1]) {
 			case 'Inicio_sesion':$ruta_elegida = 'Vistas/InicioSesion.php';
 				break;
