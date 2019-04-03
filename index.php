@@ -20,7 +20,7 @@ if($partes_ruta[0] == 'mafeking-601-online.herokuapp.com') {
 	if(count($partes_ruta) == 1) {
 		$ruta = 'https://mafeking-601-online.herokuapp.com/Registro';
 		$partes_ruta1 = explode('/', $ruta);
-		echo $partes_ruta1[0]."--".$partes_ruta1[1]."--".$partes_ruta1[2];
+		echo $partes_ruta1[0]."--".$partes_ruta1[1]."--".$partes_ruta1[2]."--".$partes_ruta1[3];
 		$ruta_elegida = 'Vistas/VistaPrincipal.php';
 	} else if(count($partes_ruta) == 2) {
 		echo 'PARTES RUTA EN SUBPAGINA';
