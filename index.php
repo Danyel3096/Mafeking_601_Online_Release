@@ -20,6 +20,7 @@ if($partes_ruta[0] == 'mafeking-601-online.herokuapp.com') {
 	if(count($partes_ruta) == 1) {
 		$ruta_elegida = 'Vistas/VistaPrincipal.php';
 	} else if(count($partes_ruta) == 2) {
+		echo 'PARTES RUTA EN SUBPAGINA';
 		switch ($partes_ruta[1]) {
 			case 'Inicio_sesion':$ruta_elegida = 'Vistas/InicioSesion.php';
 				break;
