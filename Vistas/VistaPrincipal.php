@@ -9,10 +9,7 @@ Conexion :: abrirConexion();
 ?>
 <div class="container inicio-pagina">
 	<div class="jumbotron">
-		<h1>Página web oficial Mafeking 601</h1>
-		<p>
-			Sitio dedicado a compartir las experiencias del mejor grupo del mundo
-		</p>
+		<h1>Grupo Scout 601 Mafeking</h1>
 	</div>
 </div>
 <div class="container">
@@ -106,73 +103,105 @@ Conexion :: abrirConexion();
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="modal-informacion-evento-publica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Información del evento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id-evento" name="id-evento" />
+                <input type="hidden" id="id-rama-evento" name="id-rama-evento" value="<?php echo $id_rama; ?>" />
+                <form class="validar-formulario" id="formulario-evento" name="formulario-evento" role="form" method="post">
+                    <?php
+                    include_once 'Plantillas/Formularios/FormularioEvento.php';
+                    ?>
+                </form>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <img id="ficha-evento" />
+                    </div>
+                    <div class="col-md-6">
+                        <img id="insignia-evento" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
 $(document).ready(function() {
-	$('#calendario').fullCalendar({
-		header:{
-			left:'prev',
-			center:'title',//'today'
-			right:'next',
-		},
+  var fecha = new Date();
+  var anio = fecha.getFullYear();
+    $('#calendario').fullCalendar({
+        header:{
+            left:'prev',
+            center:'title',//'today'
+            right:'next',
+        },
         showNonCurrentDates:false,
         fixedWeekCount:false,
-		dayClick:function(date,jsEvent,view){
-			$('#btn-agregar').css("display", "initial");
-			$('#btn-actualizar').css("display", "none");
-			$('#btn-borrar').css("display", "none");
-            limpiarFormulario();
-            $('#fecha-inicio').val(date.format());
-            $('#fecha-cierre').val(date.format());
-            $("#modal").modal();
-        },
-        eventClick:function(calEvent,jsEvent,view){
-            $('#btn-actualizar').css("display", "initial");
-            $('#btn-borrar').css("display", "initial");
-            $('#btn-agregar').css("display", "none");
+        eventSources: [
+            {
+                url: '<?php echo SERVIDOR ?>/App/Servidor/CtrlDAOEventos.php',
+                type: 'POST',
+                data: {
+                    "Fecha-inicial-mes": anio+"-01-01",
+                    "Fecha-final-mes": anio+"-12-31",
+                    accion: "todos-los-eventos-anio"
+                },
+                error: function() {
+                    alertify.error('No se ha obtenido la información de los eventos');
+                }
+            }
+        ],
+        eventClick:function(calEvent,jsEvent,view) {
+            var id_evento_actual = calEvent.Id;
+            comprobarAsistencia(id_evento_actual);
+            camposSoloLectura();
+            comprobarFichaMedicaHojaVida();
             $('#titulo').html(calEvent.title);
-            $('#id').val(calEvent.Id);
-            $('#nombre').val(calEvent.title);
+            $('#id-evento').val(calEvent.Id);
+            $('#nombreevento').val(calEvent.title);
             FechaInicio = calEvent.start._i.split(" ");
-            $('#fecha-inicio').val(FechaInicio[0]);
-            $('#hora-inicio').val(FechaInicio[1]);
+            $('#fechainicioevento').val(FechaInicio[0]);
+            $('#horainicio').val(FechaInicio[1]);
             FechaCierre = calEvent.end._i.split(" ");
-            $('#fecha-cierre').val(FechaCierre[0]);
-            $('#hora-cierre').val(FechaCierre[1]);
-            $('#tipo').val(calEvent.Tipo);
-            $('#lugar').val(calEvent.Lugar);
-            $('#fecha-encuentro').val(calEvent.Fecha_encuentro);
-            $('#hora-encuentro').val(calEvent.Hora_encuentro);
-            $('#punto-encuentro').val(calEvent.Punto_encuentro);
-            $('#costo').val(calEvent.Costo);
-            $('#costo-incluye').val(calEvent.Costo_incluye);
-            $('#material-individual').val(calEvent.Material_individual);
-            $('#material-equipo').val(calEvent.Material_equipos);
-            //$('#ficha').val(calEvent.Ficha);
-            $("#modal").modal();
+            $('#fechafinevento').val(FechaCierre[0]);
+            $('#horafin').val(FechaCierre[1]);
+            $('#tipoevento').val(calEvent.Tipo);
+            $('#sitioevento').val(calEvent.Sitio);
+            if (calEvent.Fecha_encuentro != "0000-00-00") {
+              $('#fechaencuentroevento').val(calEvent.Fecha_encuentro);
+              $("#labelfechaencuentroevento").prop("hidden", false);
+              $("#fechaencuentroevento").prop("hidden", false);
+            } else {
+              $("#labelfechaencuentroevento").prop("hidden", true);
+              $("#fechaencuentroevento").prop("hidden", true);
+            }
+            $('#horaencuentro').val(calEvent.Hora_encuentro);
+            if (calEvent.Punto_encuentro) {
+              $('#puntoencuentro').val(calEvent.Punto_encuentro);
+              $("#labelpuntoencuentro").prop("hidden", false);
+              $("#puntoencuentro").prop("hidden", false);
+            } else {
+              $("#labelpuntoencuentro").prop("hidden", true);
+              $("#puntoencuentro").prop("hidden", true);
+            }
+            if (calEvent.Costo != "0") {
+              $('#costoevento').val(calEvent.Costo);
+              $("#labelcostoevento").prop("hidden", false);
+              $("#costoevento").prop("hidden", false);
+            } else {
+              $("#labelcostoevento").prop("hidden", true);
+              $("#costoevento").prop("hidden", true);
+            }
+            $('#ficha-evento').val(calEvent.Ficha);
+            $("#modal-informacion-evento-publica").modal();
         },
-        editable:true,
-        eventDrop:function(calEvent) {
-            $('#id').val(calEvent.Id);
-            $('#nombre').val(calEvent.title);
-            FechaInicio = calEvent.start.format().split("T");
-            $('#fecha-inicio').val(FechaInicio[0]);
-            $('#hora-inicio').val(FechaInicio[1]);
-            FechaCierre = calEvent.end.format().split("T");
-            $('#fecha-cierre').val(FechaCierre[0]);
-            $('#hora-cierre').val(FechaCierre[1]);
-            $('#tipo').val(calEvent.Tipo);
-            $('#lugar').val(calEvent.Lugar);
-            $('#fecha-encuentro').val(calEvent.Fecha_encuentro);
-            $('#hora-encuentro').val(calEvent.Hora_encuentro);
-            $('#punto-encuentro').val(calEvent.Punto_encuentro);
-            $('#costo').val(calEvent.Costo);
-            $('#costo-incluye').val(calEvent.Costo_incluye);
-            $('#material-individual').val(calEvent.Material_individual);
-            $('#material-equipo').val(calEvent.Material_equipos);
-            //$('#ficha').val(calEvent.Ficha);
-            recolectarDatosGUI();
-            registrarInformacion('modificar', NuevoEvento, true);
-        }
     });
 });
 </script>

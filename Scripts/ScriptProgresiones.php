@@ -3,7 +3,6 @@ include_once '../App/Configuracion.php';
 ?>
 $(document).ready(function() {
   insigniasRover();
-  tablaProgresionClan();
   $("input[name=especialidad-requisitos]").each(function(){
     $(this).on('click', function() {
       var id_especialidad = $(this).val();
@@ -54,20 +53,6 @@ function tablaProgresionesClan(id_especialidad) {
     data:cadena,
     success:function(datos){
       $('#cuerpo-requisitos-clan').html(datos);
-    }
-  });
-}
-function tablaProgresionClan() {
-  var id_persona = $("#id-persona").val();
-  var id_especialidad = "18";
-  var accion = "requisitos-culmen-clan";
-  var cadena = "Id-persona="+id_persona+"&Id-especialidad="+id_especialidad+"&accion="+accion;
-  $.ajax({
-    type:'POST',
-    url:"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAOProgresiones.php",
-    data:cadena,
-    success:function(datos){
-      $('#cuerpo-culmen-clan').html(datos);
     }
   });
 }

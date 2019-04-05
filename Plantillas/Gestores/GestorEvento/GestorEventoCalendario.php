@@ -20,7 +20,7 @@ $persona_recuperada = DAOPersona :: consultarPersonaPorId($conexion, $id_persona
 $detalle_cargo = DAODetalleCargo :: consultarDetalleCargoPorIdPersona($conexion, $id_persona);
 $equipo = DAOEquipo :: consultarEquipoPorId(Conexion :: obtenerConexion(), $detalle_cargo -> obtenerIdEquipo());
 $rama = DAORama :: consultarRamaPorId(Conexion :: obtenerConexion(), $equipo -> obtenerIdRama());
-$id_rama = $rama -> obtenerId();
+//$id_rama = $rama -> obtenerId();
 $id_cargo = $detalle_cargo -> obtenerIdCargo();
 $cargo = DAOCargo :: consultarCargoPorId($conexion, $id_cargo);
 $nombre_cargo = $cargo -> obtenerNombre();
@@ -32,17 +32,21 @@ $color_texto = '';
 
 Conexion :: abrirConexion();
 if ($id_cargo == '3' || $id_cargo == '4') {
+    $id_rama_evento_calendario = '6';
     $color = 'yellow';
     $color_texto = 'black';
 } else if ($id_cargo == '5' || $id_cargo == '6') {
+    $id_rama_evento_calendario = '5';
     $color = 'green';
     $color_texto = 'white';
 } else if ($id_cargo == '7' || $id_cargo == '8') {
+    $id_rama_evento_calendario = '4';
     $color = 'blue';
-    $color_texto = 'black';
+    $color_texto = 'white';
 } else if ($id_cargo == '9' || $id_cargo == '10' || $id_cargo == '17') {
+    $id_rama_evento_calendario = '3';
     $color = 'red';
-    $color_texto = 'black';
+    $color_texto = 'white';
 }
 
 Conexion :: cerrarConexion();
@@ -50,6 +54,7 @@ Conexion :: abrirConexion();
 ?>
 <div class="container">
     <div class="row">
+        <input type="hidden" id="id-rama-evento-calendario" name="id-rama-evento-calendario" value="<?php echo $id_rama_evento_calendario; ?>" />
         <div class="col"></div>
         <div class="col-7">
             <div id="Calendario_Web"></div>
@@ -70,7 +75,7 @@ Conexion :: abrirConexion();
                 <input type="hidden" id="id-evento" name="id-evento" />
                 <input type="hidden" id="color-evento" name="color-evento" value="<?php echo $color; ?>" />
                 <input type="hidden" id="color-texto" name="color-texto" value="<?php echo $color_texto; ?>" />
-                <input type="hidden" id="id-rama-evento" name="id-rama-evento" value="<?php echo $id_rama; ?>" />
+                <input type="hidden" id="id-rama-evento" name="id-rama-evento" value="<?php echo $id_rama_evento_calendario; ?>" />
                 <form class="validar-formulario" id="formulario-evento" name="formulario-evento" role="form" method="post">
                     <?php
                     include_once 'Plantillas/Formularios/FormularioEvento.php';
@@ -92,6 +97,7 @@ Conexion :: abrirConexion();
                         <i id="ficha-no-permitida" class="fas fa-exclamation-circle" hidden></i>
                         <i id="ficha-pdf" class="far fa-file-pdf" hidden></i>
                         <i id="ficha-word-writer" class="far fa-file-word" hidden></i>
+                        <a id="enlace-ficha-evento" hidden>Descargar ficha</a>
                         <form method="POST" enctype="multipart/form-data" id="formEventoFicha">
                             <input type="hidden" id="id-ficha-evento" name="id-ficha-evento" />
                             <input type="hidden" id="id-persona-ficha-evento" name="id-persona-ficha-evento" value="<?php echo $id_persona; ?>" />

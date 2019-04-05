@@ -38,31 +38,6 @@ include_once 'Plantillas/BarraNavegacion.php';
           <div id="investidura"></div>
         </div>
       </div>
-      <h2>Información</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <h4><i class="fas fa-birthday-cake"></i> <?php echo $persona -> obtenerFechaNacimiento(); ?></h4>
-        </div>
-        <div class="col-md-6">
-          <h4>Última actividad</h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <h4>TOTEM</h4>
-        </div>
-        <div class="col-md-6">
-          <h4>FECHA DE TOTEMNIZACION</h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <h4>CARGO</h4>
-        </div>
-        <div class="col-md-6">
-          <h4>CENTRO EDUCATIVO</h4>
-        </div>
-      </div>
     </div>
     <div class="col-md-3 text-center">
       <a href="<?php echo RUTA_PERFIL_EDITAR ?>"><button type="button" class="btn btn-info form-control btn-icono" id="btn-editar-perfil" name="btn-editar-perfil"><i class="fas fa-user-edit"></i></button></a>
@@ -74,44 +49,6 @@ include_once 'Plantillas/BarraNavegacion.php';
   </div>
   <div class="row panel-perfil">
     <div class="col-md-9">
-      <h2>Progresión personal</h2>
-      <div class="row">
-        <div class="col-md-6">
-        </div>
-        <div class="col-md-6">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-        </div>
-        <div class="col-md-6">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-        </div>
-        <div class="col-md-6">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row panel-perfil">
-    <div class="col-md-9">
-      <h2>Eventos actuales</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <span>FOTOS O PARCHE DEL EVENTO AL QUE ESTOY INSCRITO</span>
-        </div>
-        <div class="col-md-6"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
-      </div>
     </div>
   </div>
 </div>
@@ -145,33 +82,6 @@ $(document).ready(function(){
     }
   });
 
-});
-$(document).ready(function(){
-  var id = <?php echo $id_persona; ?>;
-  var accion = "progresion-persona";
-  cadena = "Id-persona="+id+"&accion="+accion;
-  $.ajax({
-    method:'POST',
-    url:"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAOPerfil.php",
-    data:cadena,
-    success:function(respuesta){
-      var obj = JSON.parse(respuesta);
-      $('#investidura').goalProgress({
-        goalAmount: obj['Valor'],
-        currentAmount: obj['Abono'],
-        textBefore: '$',
-        textAfter: '/ $'+obj['Valor']+' '+obj['Detalle']
-      });
-      $(".progressBar").attr("id", "barra");
-      var texto = document.getElementById("barra").innerText;
-      var abono = texto.substring(texto.indexOf('$')+1, texto.lastIndexOf('/'));
-      var ra = texto.replace(obj['Abono'], formato(abono));
-      var texto_nuevo = document.getElementById("barra").innerText = ra;
-      var valor = texto_nuevo.substring(texto_nuevo.lastIndexOf('$')+1, texto_nuevo.lastIndexOf('I'));
-      var rv = texto_nuevo.replace(obj['Valor'], formato(valor));
-      document.getElementById("barra").innerText = rv;
-    }
-  });
 });
 var formato = function(valor) {
   var num = valor.replace(/\./g,'');
@@ -207,7 +117,7 @@ function fotoPersona() {
           var objeto = JSON.parse(datos);
           $("#foto-perfil").prop("src", "Archivos/Subidas/Perfiles/Fotos/"+objeto['Foto']);
         } else {
-          $("#foto-perfil").prop("src", "Archivos/Imagenes/usuarios.jpg");
+          $("#foto-perfil").prop("src", "Archivos/Imagenes/usuario.jpg");
         }
       }
   });

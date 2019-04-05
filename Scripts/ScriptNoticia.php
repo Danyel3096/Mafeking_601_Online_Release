@@ -18,6 +18,9 @@ $(document).ready(function() {
   $("#btn-guardar-noticia").click(function() {
     enviarNoticia();
   });
+  $("#btn-enviar-comentario").click(function() {
+    publicarComentario();
+  });
 });
 var listarNoticias = function(estado) {
   var accion = "tabla-noticia";
@@ -146,7 +149,41 @@ var limpiarNoticia = function () {
   $("#cuerpo-noticia").val('');
   $("#img-imagen-noticia").prop("src", '');
 }
-
+function publicarComentario() {
+  var id_noticia = $("#id-noticia-actual").val();
+  var id_persona_comentario = $("#id-comentarista").val();
+  var cuerpo_comentario = $("#texto-comentario").val();
+  var accion = "insertar-comentario";
+  var cadena = "Id-noticia="+id_noticia+"&Cuerpo-comentario="
+  +cuerpo_comentario+"&Id-persona-noticia="+id_persona_comentario
+  +"&accion="+accion;
+  $.ajax({
+    type:'POST',
+    url:"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAONoticias.php",
+    data:cadena,
+    success:function(respuesta){
+      if(respuesta == true) {
+        comentariosNoticia();
+        alertify.success("Comentario publicado exitosamente");
+      } else {
+        alertify.error("No se ha publicado tu comentario.<br />Intentalo de nuevo mas tarde");
+      }
+    }
+  });
+}
+function comentariosNoticia() {
+  var id_noticia = $("#id-noticia-actual").val();
+  var accion = "comentarios-noticia";
+  var cadena = "Id-noticia="+id_noticia+"&accion="+accion;
+  $.ajax({
+    method:'POST',
+    url:"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAONoticias.php",
+    data:cadena,
+    success:function(datos){
+      $("#seccion-comentarios").html(datos);
+    }
+  });
+}
 Dropzone.options.dropzoneFormNoticia = {
   withCredentials: true,
   parallelUploads: 1,

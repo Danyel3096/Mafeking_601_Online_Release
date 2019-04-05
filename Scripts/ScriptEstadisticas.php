@@ -5,10 +5,13 @@ $(document).ready(function() {
 	var id_cargo_persona = $("#id-cargo-persona").val();
 	if (id_cargo_persona == '3' || id_cargo_persona == '4') {
 	    var id_progresion = '6';
+	    $("#estadisticas-progresion-manada").prop("hidden", false);
   	} else if (id_cargo_persona == '5' || id_cargo_persona == '6') {
 	    var id_progresion = '5';
+	    $("#estadisticas-progresion-tropa").prop("hidden", false);
   	} else if (id_cargo_persona == '7' || id_cargo_persona == '8') {
 	    var id_progresion = '4';
+	    $("#estadisticas-progresion-comunidad").prop("hidden", false);
   	} else if (id_cargo_persona == '9' || id_cargo_persona == '10') {
     	var id_progresion = '3';
     	$("#estadisticas-progresion-clan").prop("hidden", false);
@@ -65,12 +68,24 @@ function porcentajesEspecialidades(id_progresion, id_cargo_persona) {
           		var objeto = JSON.parse(datos);
           		porcentajeInvestiduraRover(objeto[0]['Porcentaje'], objeto[0]['Decimal']);
           		porcentajePrecursorRover(objeto[1]['Porcentaje'], objeto[1]['Decimal']);
-          		porcentajeAprendizHabilidadTecnicaConocimientoRover(objeto[2]['Porcentaje'], objeto[2]['Decimal']);
-          		porcentajeExpertoHabilidadTecnicaConocimientoRover(objeto[3]['Porcentaje'], objeto[3]['Decimal']);
-          		porcentajeMonitorHabilidadTecnicaConocimientoRover(objeto[4]['Porcentaje'], objeto[4]['Decimal']);
-          		porcentajeAprendizFormacionCompetenciasRover(objeto[5]['Porcentaje'], objeto[5]['Decimal']);
-          		porcentajeExpertoFormacionCompetenciasRover(objeto[6]['Porcentaje'], objeto[6]['Decimal']);
-          		porcentajeMonitorFormacionCompetenciasRover(objeto[7]['Porcentaje'], objeto[7]['Decimal']);
+
+          		porcentajeAprendizHabilidadTecnicaConocimientoRover(objeto[0]['Porcentaje'], objeto[0]['Decimal']);
+          		porcentajeExpertoHabilidadTecnicaConocimientoRover(objeto[1]['Porcentaje'], objeto[1]['Decimal']);
+          		porcentajeMonitorHabilidadTecnicaConocimientoRover(objeto[2]['Porcentaje'], objeto[2]['Decimal']);
+          		porcentajeAprendizFormacionCompetenciasRover(objeto[3]['Porcentaje'], objeto[3]['Decimal']);
+          		porcentajeExpertoFormacionCompetenciasRover(objeto[4]['Porcentaje'], objeto[4]['Decimal']);
+          		porcentajeMonitorFormacionCompetenciasRover(objeto[5]['Porcentaje'], objeto[5]['Decimal']);
+
+          		porcentajeViajeEnlaceInternacional1(objeto[0]['Porcentaje'], objeto[0]['Decimal']);
+          		porcentajeViajeEnlaceInternacional2(objeto[1]['Porcentaje'], objeto[1]['Decimal']);
+          		porcentajeViajeEnlaceInternacional3(objeto[2]['Porcentaje'], objeto[2]['Decimal']);
+          		porcentajeEmprendimiento1(objeto[3]['Porcentaje'], objeto[3]['Decimal']);
+          		porcentajeEmprendimiento2(objeto[4]['Porcentaje'], objeto[4]['Decimal']);
+          		porcentajeEmprendimiento3(objeto[5]['Porcentaje'], objeto[5]['Decimal']);
+          		porcentajeServicio1(objeto[6]['Porcentaje'], objeto[6]['Decimal']);
+          		porcentajeServicio2(objeto[7]['Porcentaje'], objeto[7]['Decimal']);
+          		porcentajeServicio3(objeto[8]['Porcentaje'], objeto[8]['Decimal']);
+          		porcentajeBP(objeto[9]['Porcentaje'], objeto[9]['Decimal']);
         	}
       	}
   	});
@@ -329,6 +344,306 @@ function porcentajeExpertoFormacionCompetenciasRover(porcentaje, decimal) {
 
 function porcentajeMonitorFormacionCompetenciasRover(porcentaje, decimal) {
   	var estadistica_monitor = $('#estadistica-monitor-formacion-competencias-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeViajeEnlaceInternacional1(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-aprendiz-viaje-enlace-internacional-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeViajeEnlaceInternacional2(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-experto-viaje-enlace-internacional-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeViajeEnlaceInternacional3(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-monitor-viaje-enlace-internacional-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeEmprendimiento1(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-aprendiz-emprendimiento-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeEmprendimiento2(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-experto-emprendimiento-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeEmprendimiento3(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-monitor-emprendimiento-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeServicio1(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-aprendiz-servicio-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeServicio2(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-experto-servicio-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeServicio3(porcentaje, decimal) {
+  	var estadistica_monitor = $('#estadistica-monitor-servicio-clan').circleProgress({
+	  arcCoef: 0.5,
+	  value: decimal,
+	  size: 100,
+	  fill: { gradient: ['red', 'green']}
+	});
+
+	estadistica_monitor.resizable()
+	  .on('resizestop', function() {
+	      estadistica_monitor.circleProgress();
+	  });
+
+	estadistica_monitor.on('circle-animation-progress', function(e, v) {
+	  var obj = $(this).data('circle-progress'),
+	      ctx = obj.ctx,
+	      s = obj.size,
+	      sv = (porcentaje * v).toFixed()+"%",
+	      fill = obj.arcFill;
+
+	  ctx.save();
+	  ctx.font = "bold " + s / 2.5 + "px sans-serif";
+	  ctx.textAlign = 'center';
+	  ctx.textBaseline = 'middle';
+	  ctx.fillStyle = fill;
+	  ctx.fillText(sv, s / 2, s / 2, 80);
+	  ctx.restore();
+	});
+}
+
+function porcentajeBP(porcentaje, decimal) {
+  	var estadistica_monitor = $('#porcentaje-ultima-insignia').circleProgress({
 	  arcCoef: 0.5,
 	  value: decimal,
 	  size: 100,

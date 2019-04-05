@@ -26,6 +26,7 @@ $nombre_equipo = $equipo -> obtenerNombre();
 <div class="container inicio-pagina">
 	<input type="hidden" id="id-persona-evento" name="id-persona-evento" value="<?php echo $id_persona; ?>" />
 	<input type="hidden" id="id-rama-persona" name="id-rama-persona" value="<?php echo $id_rama; ?>" />
+	<input type="hidden" id="id-cargo-persona" name="id-cargo-persona" value="<?php echo $id_cargo; ?>" />
 	<div class="row">
 		<div class="col">
 			<div id="mes-enero"></div>
@@ -90,13 +91,16 @@ $nombre_equipo = $equipo -> obtenerNombre();
                     ?>
                 </form>
                 <div class="form-row">
-                    <div class="col-md-6">
-                        <img id="ficha-evento" />
-                    </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 text-center">
                         <img id="insignia-evento" />
                     </div>
+                    <div class="col-md-6 text-center">
+                    	<i id="ficha-pdf" class="far fa-file-pdf" hidden></i>
+                        <i id="ficha-word-writer" class="far fa-file-word" hidden></i>
+                        <a id="ficha-evento" hidden>Descargar ficha</a>
+                    </div>
                 </div>
+                <hr>
                 <div class="row fila-confirmacion-asistencia-evento">
                 	<div class="col-md-12 text-center">
                 		<button type="submit" id="btn-asistencia-positiva" name="btn-asistencia" class="btn btn-success btn-icono" value="Sí"><i class="fas fa-check-circle"></i> Asistire</button>

@@ -130,57 +130,6 @@ $(document).ready(function() {
 });
 </script>
 <script>
- Dropzone.options.dropzoneFormFondo = {
-  withCredentials: true,
-  parallelUploads: 1,
-  maxFilesize: 2,//EN MB
-  paramName: 'fondo-previo',
-  maxFiles: 1,
-  clickable: true,
-  ignoreHiddenFiles: true,
-  acceptedFiles:".jpg,.jpeg,.gif,.bmp,.png,.svg",
-  autoProcessQueue: false,
-  autoQueue: true,
-  dictDefaultMessage: "Arrastra el archivo aqui para subirlo como fondo de perfil",
-  dictFallbackMessage: "Su navegador no soporta arrastrar y soltar para subir archivos.",
-  dictFallbackText: "Por favor utilize el formuario de reserva de abajo como en los viejos tiempos.",
-  dictFileTooBig: "La imagen revasa el tamaño permitido ({{filesize}}MiB). Tam. Max : {{maxFilesize}}MiB.",
-  dictInvalidFileType: "No se puede subir este tipo de archivos.",
-  dictResponseError: "Server responded with {{statusCode}} code.",
-  dictCancelUpload: "Cancelar subida",
-  dictUploadCanceled: "Has cancelado la subida",
-  dictCancelUploadConfirmation: "¿Seguro que desea cancelar esta subida?",
-  dictRemoveFile: "Eliminar archivo",
-  dictRemoveFileConfirmation: "¿Desea eliminar el archivo?",
-  dictMaxFilesExceeded: "Se ha excedido el numero de archivos permitidos.",
-  init: function(){
-   var btn_subir_fondo = document.querySelector('#btn-subir-fondo');
-   myDropzone = this;
-   btn_subir_fondo.addEventListener("click", function(){
-    myDropzone.processQueue();
-   });
-   this.on("success", function(file, respuesta){
-    if(this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0)
-    {
-     var _this = this;
-     _this.removeAllFiles();
-    }
-    if (respuesta == 2) {
-        alertify.error('El archivo excede el peso permitido');
-      } else if(respuesta == 3) {
-        alertify.error('El tipo de archivo no esta permitido');
-      } else if(respuesta == 4) {
-        alertify.error('El archivo no pudo ser subido');
-      } else if (respuesta == 5) {
-        alertify.error('El archivo no fue subido');
-      } else if(respuesta == true) {
-        alertify.success('El archivo fue subido correctamente');
-      }
-   });
-  },
- };
-</script>
-<script>
  Dropzone.options.dropzoneFormFoto = {
   withCredentials: true,
   parallelUploads: 1,

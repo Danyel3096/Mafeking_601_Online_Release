@@ -50,7 +50,7 @@ class ControlSesion {
 
 	public static function iniciarSesion($id, $nombre) {
 		if(session_id() == '') {
-			session_start();	
+			session_start();
 		}
 		$_SESSION['id'] = $id;
 		$_SESSION['nombre'] = $nombre;

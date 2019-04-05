@@ -8,8 +8,8 @@ Conexion :: cerrarConexion();
 			<ul class="lista">
   				<li><i class="fas fa-home"></i> Carrera 19, kilometro 1 vía a tienda nueva</li>
   				<li><i class="fas fa-map-marked-alt"></i> Palmira, Valle del Cauca, Colombia</li>
-  				<li><i class="fas fa-mobile-alt"></i> Celular</li>
-  				<li><i class="fas fa-phone-square"></i> Telefono</li>
+  				<li><i class="fas fa-mobile-alt"></i> 310 111 11 00</li>
+  				<!--<li><i class="fas fa-phone-square"></i> Telefono</li>-->
 				<li><i class="fas fa-at"></i> mafeking601palmira@hotmail.com</li>
 			</ul>
 		</div>
@@ -83,6 +83,7 @@ Conexion :: cerrarConexion();
 		<script src="<?php echo RUTA_SCRIPT ?>ScriptEscritores.php"></script>
 		<script src="<?php echo RUTA_SCRIPT ?>ScriptEstadisticas.php"></script>
 		<script src="<?php echo RUTA_SCRIPT ?>ScriptEventos.php"></script>
+		<script src="<?php echo RUTA_SCRIPT ?>ScriptIntendencia.php"></script>
 		<script src="<?php echo RUTA_SCRIPT ?>ScriptNoticia.php"></script>
 		<script src="<?php echo RUTA_SCRIPT ?>ScriptOrganigrama.php"></script>
 		<script src="<?php echo RUTA_SCRIPT ?>ScriptParticipaciones.php"></script>

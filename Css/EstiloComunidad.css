@@ -1,3 +1,9 @@
+.activo {/*se muestra cuando el boton desplegable esta desplegado*/
+  color: blue !important;
+  float: right !important;
+  margin: 5px 0px !important;
+}
+
 body {
     background-color: lightcyan !important;
 }

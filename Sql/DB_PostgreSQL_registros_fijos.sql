@@ -1163,6 +1163,11 @@ INSERT INTO municipios VALUES
 
 INSERT INTO centros_educativos VALUES
 (DEFAULT, 'No aplica', 'No aplica', 'No aplica'),
+(DEFAULT, 'Colegio Santo Tomas', 'Palmira', 'Privado'),
+(DEFAULT, 'Colegio Cardenas', 'Centro', 'Público'),
+(DEFAULT, 'Liceo Madre Elisa', 'Palmira', 'Privado'),
+(DEFAULT, 'Colegio La Milagrosa', 'Centro', 'Público'),
+(DEFAULT, 'Colegio Comfandi', 'Palmira', 'Privado'),
 (DEFAULT, 'CENAL', 'Palmira', 'Privado'),
 (DEFAULT, 'SENA', 'Palmira', 'Público'),
 (DEFAULT, 'Corporación Universitaria Remington', 'Palmira', 'Privado'),

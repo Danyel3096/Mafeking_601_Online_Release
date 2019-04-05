@@ -329,11 +329,15 @@ include_once 'Plantillas/BarraNavegacion.php';
 										<img id="eje-bp" class="insignias" />
 									</div>
 								</div>
+								<div class="row">
+													<div class="col-md-12">
+														<input type="radio" name="especialidad-requisitos" value="18" />
+													</div>
+												</div>
 							</div>
 						</th>
 					</tr>
 				</thead>
-				<tbody id="cuerpo-culmen-clan" name="cuerpo-culmen-clan"></tbody>
 			</table>
 			<div class="espacio-pagina"></div>
   		</div>

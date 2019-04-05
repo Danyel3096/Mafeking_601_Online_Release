@@ -1,6 +1,3 @@
-CREATE DATABASE scouts_601_palmira WITH ENCODING = 'UTF8';
-USE scouts_601_palmira;
-
 CREATE TYPE tipo_genero AS ENUM('Femenino', 'Masculino');
 CREATE TYPE tipo_estrato AS ENUM('1', '2', '3', '4', '5', '6');
 CREATE TABLE Acudientes (
@@ -55,7 +52,8 @@ CREATE TABLE Comentarios (
 	Fecha DATE NOT NULL,
 	Hora TIME NOT NULL,
 	CONSTRAINT PK_Comentario PRIMARY KEY(Id),
-	Id_noticia INTEGER NOT NULL
+	Id_noticia INTEGER NOT NULL,
+	Id_persona INTEGER NOT NULL
 );
 
 CREATE TABLE Departamentos (

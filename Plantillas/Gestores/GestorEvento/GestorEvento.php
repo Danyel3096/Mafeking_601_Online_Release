@@ -32,17 +32,21 @@ $color_texto = '';
 
 Conexion :: abrirConexion();
 if ($id_cargo == '3' || $id_cargo == '4') {
+    $id_rama_evento_calendario = '6';
     $color = 'yellow';
     $color_texto = 'black';
 } else if ($id_cargo == '5' || $id_cargo == '6') {
+    $id_rama_evento_calendario = '5';
     $color = 'green';
     $color_texto = 'white';
 } else if ($id_cargo == '7' || $id_cargo == '8') {
+    $id_rama_evento_calendario = '4';
     $color = 'blue';
-    $color_texto = 'black';
+    $color_texto = 'white';
 } else if ($id_cargo == '9' || $id_cargo == '10' || $id_cargo == '17') {
+    $id_rama_evento_calendario = '3';
     $color = 'red';
-    $color_texto = 'black';
+    $color_texto = 'white';
 }
 
 Conexion :: cerrarConexion();
@@ -50,6 +54,7 @@ Conexion :: abrirConexion();
 ?>
 <div class="container">
     <div class="row">
+        <input type="hidden" id="id-rama-evento-calendario" name="id-rama-evento-calendario" value="<?php echo $id_rama_evento_calendario; ?>" />
         <div class="col"></div>
         <div class="col-7">
             <div id="Calendario_Asistencia_Eventos"></div>

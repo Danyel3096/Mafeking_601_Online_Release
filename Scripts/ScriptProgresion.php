@@ -7,10 +7,16 @@ $(document).ready(function() {
   var id_cargo_persona = $("#id-cargo-persona").val();
   if (id_cargo_persona == '3' || id_cargo_persona == '4') {
     $("#equipos-manada").prop("hidden", false);
+    var id_progresion = '6';
+    ajaxSelectEjesProgresion(id_progresion);
   } else if (id_cargo_persona == '5' || id_cargo_persona == '6') {
     $("#equipos-tropa").prop("hidden", false);
+    var id_progresion = '5';
+    ajaxSelectEjesProgresion(id_progresion);
   } else if (id_cargo_persona == '7' || id_cargo_persona == '8') {
     $("#equipos-comunidad").prop("hidden", false);
+    var id_progresion = '4';
+    ajaxSelectEjesProgresion(id_progresion);
   } else if (id_cargo_persona == '9' || id_cargo_persona == '10') {
     var id_progresion = '3';
     var id_equipo_rama = '3';
@@ -87,6 +93,7 @@ $(document).ready(function() {
           });
           $("#btn-seleccionar-requisitos").click(function() {
             $("#btn-seleccionar-requisitos").css("display", "none");
+            $("#btn-guardar-progresion").prop("disabled", false);
             var checkboxes = $('input:checkbox[name=estado-requisitos]');
             $("input:checkbox").prop('checked', $(this).prop("checked"));
             $("input:checkbox").prop('checked', function(i, val) {
@@ -108,7 +115,6 @@ function guardarProgresion(marcados, desmarcados) {
   var id_especialidad = $("#especialidades-eje option:selected").val();
   var accion = "insertar-actualizar-progresion";
   var cadena="Id-persona-equipo="+id_persona_equipo+"&Id-especialidad="+id_especialidad+"&Requisitos-marcados="+marcados+"&Requisitos-desmarcados="+desmarcados+"&accion="+accion;
-  alert(cadena);
   $.ajax({
     type:'POST',
     url:"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAOProgresion.php",

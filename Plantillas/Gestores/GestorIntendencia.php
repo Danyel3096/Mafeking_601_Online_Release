@@ -1,39 +1,62 @@
 <?php
 include_once 'App/Conexion.php';
-include_once 'App/Modelos/Intendencia.php';
-include_once 'App/DAO/DAOIntendencia.php';
 include_once 'App/Redireccion.php';
 
-if (isset($_POST['enviar-intendencia'])) {
-	Conexion :: abrirConexion();
-	$validador = new ControlIntendencia($_POST['numero-cedula'], $_POST['nombre1'], $_POST['nombre2'], $_POST['apellido1'], $_POST['apellido2'], $_POST['genero'], $_POST['parentesco'], $_POST['telefono'], $_POST['celular'], $_POST['eps'], $_POST['ocupacion'], $_POST['empresa'], $_POST['profesion'], $_POST['correo'], $_POST['id-residencia'], Conexion :: obtenerConexion());
-
-	if ($validador -> registroValido()) {
-		$intendencia = new Intendencia($validador -> obtenerNumeroCedula(), $validador -> obtenerPrimerNombre(), $validador -> obtenerSegundoNombre(), $validador -> obtenerPrimerApellido(), $validador -> obtenerSegundoApellido(), $validador -> obtenerGenero(), $validador -> obtenerParentesco(), $validador -> obtenerTelefono(), $validador -> obtenerCelular(), $validador -> obtenerEPS(), $validador -> obtenerOcupacion(), $validador -> obtenerEmpresa(), $validador -> obtenerProfesion(), $validador -> obtenerCorreo(), $validador -> obtenerIdResidencia());
-		$intendecia_insertada = DAOIntendencia :: insertarIntendencia(Conexion :: obtenerConexion(), $intendencia);
-		if ($intedencia_insertada) {
-		Redireccion :: redirigir(RUTA_REGISTRO_CORRECTO.'/'.$intendencia -> obtenerPrimerNombre());
-		}
-	}
-	Conexion :: cerrarConexion();
-}
-
-include_once 'Plantillas/InicioPagina.php';
-include_once 'Plantillas/BarraNavegacion.php';
+Conexion :: abrirConexion();
+$conexion = Conexion :: obtenerConexion();
+$id_persona = $_SESSION['id'];
+$persona_recuperada = DAOPersona :: consultarPersonaPorId($conexion, $id_persona);
+$detalle_cargo = DAODetalleCargo :: consultarDetalleCargoPorIdPersona($conexion, $id_persona);
+$equipo = DAOEquipo :: consultarEquipoPorId(Conexion :: obtenerConexion(), $detalle_cargo -> obtenerIdEquipo());
+$rama = DAORama :: consultarRamaPorId(Conexion :: obtenerConexion(), $equipo -> obtenerIdRama());
+$id_rama = $rama -> obtenerId();
+$id_equipo = $equipo -> obtenerId();
+$id_cargo = $detalle_cargo -> obtenerIdCargo();
+$cargo = DAOCargo :: consultarCargoPorId($conexion, $id_cargo);
+$nombre_cargo = $cargo -> obtenerNombre();
+$nombre_equipo = $equipo -> obtenerNombre();
 ?>
-<div class="row">
-	<div class="col-md-12 formularios-usuario">
-	<h2><i class="fa fa-comments" aria-hidden="true"></i></h2>
-	<h3>Información de la intendencia</h3>
-	<hr>
-	<form role="form" method="post" action="<?php echo RUTA_GESTOR_INTENDENCIA ?>">
-	<?php
-	if (isset($_POST['enviar-intendencia'])) {
-		include_once 'Plantillas/Formularios/IntendenciaValidada.php';
-	} else {
-		include_once 'Plantillas/Formularios/IntendenciaVacia.php';
-	}
-	?>
-	</form>
-	</div>
+<div class="container">
+	<input type="hidden" id="id-equipo-intendente" name="id-equipo-intendente" value="<?php echo $id_equipo ?>" />
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table-striped table-hover table-bordered" id="tabla-intendencia" name="tabla-intendencia">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Fecha recibido</th>
+            <th><button class="btn btn-primary btn-icono" id="btn-intendencia-nueva" data-toggle="modal" data-target="#modal-intendencia"><i class="fas fa-plus-square"></i></button></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-intendencia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Información de la intendencia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="contenido" class="container text-center">
+            <input type="hidden" id="id-persona-intendencia" class="form-control" value="<?php echo $id_persona; ?>" />
+            <input type="hidden" id="id-intendencia" name="id-intendencia" class="form-control" />
+            <form class="validar-formulario" id="formulario-intendencia" name="formulario-intendencia" role="form" method="post">
+            <?php
+            include_once 'Plantillas/Formularios/FormularioIntendencia.php';
+            ?>
+            </form>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" id="btn-guardar-intendencia" name="btn-guardar-intendencia" class="btn btn-success btn-icono"><i class="fas fa-cloud-upload-alt"></i></button>
+      </div>
+    </div>
+  </div>
 </div>

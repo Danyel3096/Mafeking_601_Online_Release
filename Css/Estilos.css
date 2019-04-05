@@ -1,5 +1,21 @@
+.fc-view, .fc-view>table{
+	z-index: 0 !important;
+}
+
+#img-persona-comentario {
+	width: 50px !important;
+}
+
+#nombre-comentarista {
+	width: 250px !important;
+}
+
+#favicon-nav {
+	width: 30px !important;
+	height: auto !important;
+}
 #img-insignia-evento {
-	width: 200px !important;
+	width: 100px !important;
 	height: auto !important;
 	margin-bottom: 10px !important;
 }
@@ -544,6 +560,7 @@ td {
     width: 100%;
     background-color: #111;
     overflow-x: hidden;
+    padding-bottom: 200px !important;
 }
 .sidenav a, .dropdown-btn {/*enlaces y boton desplegable*/
     padding: 6px 8px 6px 16px;

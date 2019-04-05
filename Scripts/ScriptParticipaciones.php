@@ -126,7 +126,6 @@ function registroParticipacion() {
   +"&Creditos-url="+creditos_publicidad_evento+"&Fecha-inicio="+fecha_inicio_evento_participacion
   +"&Fecha-fin="+fecha_fin_evento_participacion+"&Pie-url="+pie_publicidad_evento_participacion
   +"&Resumen-evento="+resumen_evento_participacion+"&Id-rama="+id_rama+"&accion="+accion;
-  alert(cadena);
   $.ajax({
     method:'POST',
     url:"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAOParticipaciones.php",

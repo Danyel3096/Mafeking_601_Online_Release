@@ -2,6 +2,7 @@
 include_once '../App/Configuracion.php';
 ?>
 $(document).ready(function() {
+    var id_rama_evento_calendario = $("#id-rama-evento-calendario").val();
     var id_rama_evento = $("#id-rama-evento").val();
     var accion = "eventos-calendario";
     $('#Calendario_Web').fullCalendar({
@@ -24,7 +25,7 @@ $(document).ready(function() {
                 url: '<?php echo SERVIDOR ?>/App/Servidor/CtrlDAOEventos.php',
                 type: 'POST',
                 data: {
-                    "Id-rama-evento": id_rama_evento,
+                    "Id-rama-evento": id_rama_evento_calendario,
                     accion: accion
                 },
                 error: function() {
@@ -60,6 +61,13 @@ $(document).ready(function() {
               $("#img-insignia-evento").attr("src", "");
               $("#img-insignia-evento").prop("hidden", true);
             }
+            if (calEvent.Ficha) {
+              $("#enlace-ficha-evento").attr("href", "../../Archivos/Subidas/Eventos/Fichas_eventos/"+calEvent.Ficha+"?forcedownload=1");
+              $("#enlace-ficha-evento").prop("hidden", false);
+            } else {
+              $("#enlace-ficha-evento").attr("href", "");
+              $("#enlace-ficha-evento").prop("hidden", true);
+            }
             $("#modal-gestor-evento").modal();
         },
         editable:true,
@@ -94,7 +102,7 @@ $(document).ready(function() {
                 url: '<?php echo SERVIDOR ?>/App/Servidor/CtrlDAOEventos.php',
                 type: 'POST',
                 data: {
-                    "Id-rama-evento": id_rama_evento,
+                    "Id-rama-evento": id_rama_evento_calendario,
                     accion: accion
                 },
                 error: function() {
@@ -141,6 +149,7 @@ $(document).ready(function() {
             tipoevento:{required: true},
             sitioevento:{required: true, latinos: true},
             fechaencuentro:{dateISO: true},
+            horaencuentro:{required: true},
             puntoencuentro:{latinos: true},
             costoevento:{digits: true}
         },
@@ -153,6 +162,7 @@ $(document).ready(function() {
             tipoevento:{required: 'El campo es requerido'},
             sitioevento:{required: 'El campo es requerido', latinos: 'Solo se aceptan letras'},
             fechaencuentro:{dateISO: 'El formato de fecha es incorrecto'},
+            horaencuentro:{required: 'El campo es requerido'},
             puntoencuentro:{latinos: 'Solo se aceptan letras'},
             costoevento:{digits: 'Solo se aceptan números'}
         },

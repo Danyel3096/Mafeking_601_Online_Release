@@ -15,7 +15,7 @@
 		<div class="form-group">
 			<label><strong>Hora inicio</strong></label><span class="obligatorio">*</span>
             <div class="input-group clockpicker" data-autoclose="true">
-                <input type="time" id="horainicio" name="horainicio" class="form-control" value="02:30 p.m." required />
+                <input type="time" id="horainicio" name="horainicio" class="form-control" required />
             </div>
 		</div>
 	</div>
@@ -65,9 +65,9 @@
 	</div>
 	<div class="col-md-4">
 		<div class="form-group">
-			<label id="labelhoraencuentro"><strong>Hora encuentro</strong></label>
+			<label id="labelhoraencuentro"><strong>Hora encuentro</strong></label><span class="obligatorio">*</span>
             <div class="input-group clockpicker" data-autoclose="true">
-                <input type="text" id="horaencuentro" name="horaencuentro" class="form-control" />
+                <input type="time" id="horaencuentro" name="horaencuentro" class="form-control" required />
             </div>
 		</div>
 	</div>

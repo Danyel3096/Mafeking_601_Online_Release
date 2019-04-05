@@ -52,7 +52,8 @@ CREATE TABLE Comentarios (
 	Fecha DATE NOT NULL,
 	Hora TIME NOT NULL,
 	CONSTRAINT PK_Comentario PRIMARY KEY(Id),
-	Id_noticia INT UNSIGNED NOT NULL
+	Id_noticia INT UNSIGNED NOT NULL,
+	Id_persona INT UNSIGNED NOT NULL
 );
 
 CREATE TABLE Departamentos (

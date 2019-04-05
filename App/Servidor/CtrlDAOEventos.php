@@ -123,7 +123,7 @@ switch ($accion) {
 		echo json_encode($respuesta);
 		break;
 	case 'eventos-mes':
-		$sql = "SELECT Id, Nombre AS title, Insignia, Fecha_inicio AS start, Fecha_fin AS end, Tipo, Sitio, Fecha_encuentro, Hora_encuentro, Punto_encuentro, Costo, Costo_incluye, Material_individual, Material_equipos, Ficha, Color AS color, Color_texto AS textColor FROM eventos WHERE (Fecha_inicio BETWEEN '$fecha_inicial_mes' AND '$fecha_final_mes') AND (Fecha_fin BETWEEN '$fecha_inicial_mes' AND '$fecha_final_mes') AND Id_rama = '$id_rama_evento'";
+		$sql = "SELECT Id, Nombre AS title, Insignia, Fecha_inicio AS start, Fecha_fin AS end, Tipo, Sitio, Fecha_encuentro, Hora_encuentro, Punto_encuentro, Costo, Ficha, Color AS color, Color_texto AS textColor FROM eventos WHERE (Fecha_inicio BETWEEN '$fecha_inicial_mes' AND '$fecha_final_mes') AND (Fecha_fin BETWEEN '$fecha_inicial_mes' AND '$fecha_final_mes') AND Id_rama = '$id_rama_evento'";
 		$sentencia = $conexion -> prepare($sql);
 		$sentencia -> execute();
 		$resultado = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
@@ -172,7 +172,7 @@ switch ($accion) {
 			echo $respuestaEPE;
 			break;
 	default:
-		$sql = "SELECT Id, Nombre AS title, Insignia, Fecha_inicio AS start, Fecha_fin AS end, Tipo, Sitio, Fecha_encuentro, Hora_encuentro, Punto_encuentro, Costo, Costo_incluye, Material_individual, Material_equipos, Ficha, Color AS color, Color_texto AS textColor FROM eventos WHERE Id_rama = '$id_rama_evento'";
+		$sql = "SELECT Id, Nombre AS title, Insignia, Fecha_inicio AS start, Fecha_fin AS end, Tipo, Sitio, Fecha_encuentro, Hora_encuentro, Punto_encuentro, Costo, Ficha, Color AS color, Color_texto AS textColor FROM eventos WHERE Id_rama = '$id_rama_evento'";
 		$sentencia = $conexion -> prepare($sql);
 		$sentencia -> execute();
 		$resultado = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
@@ -204,6 +204,13 @@ switch ($accion) {
 			array_push($tareas, $ficha_medica);
 		}
 		echo json_encode($tareas);
+		break;
+	case 'todos-los-eventos-anio':
+		$sql = "SELECT Id, Nombre AS title, Insignia, Fecha_inicio AS start, Fecha_fin AS end, Tipo, Sitio, Fecha_encuentro, Hora_encuentro, Punto_encuentro, Costo, Ficha, Color AS color, Color_texto AS textColor FROM eventos WHERE Fecha_inicio > '$fecha_inicial_mes' AND Fecha_fin < '$fecha_final_mes'";
+		$sentencia = $conexion -> prepare($sql);
+		$sentencia -> execute();
+		$resultado = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
+		echo json_encode($resultado);
 		break;
 }
 ?>

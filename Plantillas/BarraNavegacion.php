@@ -42,18 +42,18 @@ $(document).ready(function(){
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand mb-0 h1" href="<?php echo SERVIDOR ?>">Mafeking 601</a>
+	<img src="<?php echo SERVIDOR ?>/favicon.ico" id="favicon-nav" /><a class="navbar-brand mb-0 h1" href="<?php echo SERVIDOR ?>">Mafeking 601</a>
 	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<?php if(!$sesion_usuario) { ?>
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a class="nav-link enlaces-nav" href="<?php echo RUTA_ORGANIGRAMA ?>"><i class="far fa-calendar-alt"></i> Organigrama</a>
+				<a class="nav-link enlaces-nav" href="<?php echo RUTA_ORGANIGRAMA ?>"><i class="fas fa-sitemap"></i> Organigrama</a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link enlaces-nav" href="<?php echo RUTA_PROGRESIONES ?>"><i class="fa fa-taxi" aria-hidden="true"></i> Progresiones</a>
+				<a class="nav-link enlaces-nav" href="<?php echo RUTA_PROGRESIONES ?>"><i class="fas fa-tasks"></i> Progresiones</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link enlaces-nav" href="<?php echo RUTA_NOTICIAS ?>"><i class="fas fa-archway"></i> Noticias</a>
+				<a class="nav-link enlaces-nav" href="<?php echo RUTA_NOTICIAS ?>"><i class="fas fa-newspaper"></i> Noticias</a>
 			</li>
 		</ul>
 		<?php } else { ?>
@@ -65,17 +65,12 @@ $(document).ready(function(){
 				<a class="nav-link enlaces-nav" href="<?php echo RUTA_PROGRESIONES ?>"><i class="fas fa-tasks"></i> Progresiones</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link enlaces-nav" href="<?php echo RUTA_PROGRESIONES ?>"><i class="far fa-question-circle"></i> Ayuda</a>
+				<a class="nav-link enlaces-nav" href="#"><i class="far fa-question-circle"></i> Ayuda</a>
 			</li>
 		</ul>
 		<?php } ?>
 		<ul class="navbar-nav ml-auto">
 			<form class="form-inline my-2 my-lg-0">
-				<select id="filtro" name="filtro" class="form-control custom-select" required>
-   					<option label="Todo" selected></option> 
-					<option value="Tarjeta de identidad">Noticias</option>
-					<option value="Cedula de ciudadanía">Canciones</option>
-				</select>
       			<input class="form-control mr-sm-2" type="search" placeholder="¿Qué buscas?" aria-label="Search" name="palabra-clave" id="palabra-clave">
       			<div id="coincidencias"></div>
 		    	<button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
@@ -101,8 +96,8 @@ $(document).ready(function(){
   				<div class="dropdown-menu dropdown-menu-right inicio-sesion">
   					<form class="px-2 py-1" role="form" method="post" action="<?php echo RUTA_INICIO_SESION ?>">
     					<div class="form-group">
-      						<label for="texto">Correo, Totem, Celular</label>
-      						<input type="text" class="form-control" id="texto" name="texto" placeholder="Correo electrónico, totem o celular" required>
+      						<label for="texto">Correo electrónico</label>
+      						<input type="text" class="form-control" id="texto" name="texto" placeholder="Correo electrónico" required>
     					</div>
     					<div class="form-group">
       						<label for="acceso">Contraseña</label>

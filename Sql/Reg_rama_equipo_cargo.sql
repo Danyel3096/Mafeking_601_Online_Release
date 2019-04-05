@@ -1,9 +1,9 @@
-INSERT INTO ramas VALUES ('', 'Jefatura de grupo', '', 'Dirigentes', 'RIC', '', 'Historia', 'Ley', 'Promesa', 'Lema');
-INSERT INTO ramas VALUES ('', 'Consejo de padres', '', 'Apoyos', 'RIC', '', 'Historia', 'Ley', 'Promesa', 'Lema');
-INSERT INTO ramas VALUES ('', 'Clan 1 San Pablo', '', 'Colaboradores del grupo', 'RIC', '', 'Historia', 'Ley', 'Promesa', 'Lema');
-INSERT INTO ramas VALUES ('', 'Comunidad Zulú', '', 'Exploradores del grupo', 'RIC', '', 'Historia', 'Ley', 'Promesa', 'Lema');
-INSERT INTO ramas VALUES ('', 'Tropa Mafeking', '', 'Divertidos del grupo', 'RIC', '', 'Historia', 'Ley', 'Promesa', 'Lema');
-INSERT INTO ramas VALUES ('', 'Manada Brownsea', '', 'Alegria del grupo', 'RIC', '', 'Historia', 'Ley', 'Promesa', 'Lema');
+INSERT INTO ramas VALUES ('', 'Jefatura de grupo', 'Rama_1.jpg', 'Dirigentes', 'Foto_historica_1.jpg', '', 'Historia', 'Ley', 'Promesa', 'Lema');
+INSERT INTO ramas VALUES ('', 'Consejo de padres', 'Rama_2.jpg', 'Apoyos', 'Foto_historica_2.jpg', '', 'Historia', 'Ley', 'Promesa', 'Lema');
+INSERT INTO ramas VALUES ('', 'Clan 1 San Pablo', 'Rama_3.jpg', 'Colaboradores del grupo', 'Foto_historica_3.jpg', '', 'Historia', 'Ley', 'Promesa', 'Lema');
+INSERT INTO ramas VALUES ('', 'Comunidad Zulú', 'Rama_4.jpg', 'Exploradores del grupo', 'Foto_historica_4.jpg', '', 'Historia', 'Ley', 'Promesa', 'Lema');
+INSERT INTO ramas VALUES ('', 'Tropa Mafeking', 'Rama_5.jpg', 'Divertidos del grupo', 'Foto_historica_5.jpg', '', 'Historia', 'Ley', 'Promesa', 'Lema');
+INSERT INTO ramas VALUES ('', 'Manada Brownsea', 'Rama_6.jpg', 'Alegria del grupo', 'Foto_historica_6.jpg', '', 'Historia', 'Ley', 'Promesa', 'Lema');
 
 INSERT INTO progresiones VALUES ('', 'Progresion de jefatura', 'Descripcion', '1');
 INSERT INTO progresiones VALUES ('', 'Progresion de consejo', 'Descripcion', '2');

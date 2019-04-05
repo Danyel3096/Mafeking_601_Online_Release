@@ -125,7 +125,7 @@ switch ($accion) {
 		$sqlPPSP = "SELECT DISTINCT dc.Id_persona AS Personas_rama FROM progresiones pr LEFT JOIN equipos eq ON eq.Id_rama = pr.Id_rama LEFT JOIN detalle_cargos dc ON eq.Id = dc.Id_equipo WHERE pr.Id = '$id_progresion' AND dc.Id_cargo != '$id_cargo' AND dc.Id_persona NOT IN (SELECT dp.Id_persona FROM detalle_progresiones dp)";
 		$sentenciaPPSP = $conexion -> prepare($sqlPPSP);
 		$sentenciaPPSP -> execute();
-		$personas_rama_sin_progresion = $sentenciaTE -> rowCount();
+		$personas_rama_sin_progresion = $sentenciaPPSP -> rowCount();
 
 		if ($personas_rama_sin_progresion > 0) {
 			$arreglo['Porcentaje'] = $personas_rama_sin_progresion * 100 / $cantidad_personas_rama['Personas_rama'];
@@ -143,7 +143,7 @@ switch ($accion) {
 		$sentenciaTE -> execute();
 		$personas_rama_sin_progresion = $sentenciaTE -> fetchAll(PDO::FETCH_ASSOC);
 		
-		if ($personas_rama_sin_progresion == 0) {
+		if (count($personas_rama_sin_progresion) == 0) {
 			echo "<tr>";
 			echo "<td colspan='3'>Todas las personas de la rama han empezado su progresión</td>";
 			echo "</tr>";

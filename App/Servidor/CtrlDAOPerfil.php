@@ -52,7 +52,7 @@ switch ($accion) {
 		}
 		break;
 	case 'inscripcion-persona':
-		$sqlIP = "SELECT t.Valor as Valor, dt.Abono as Abono, t.Detalle as Detalle FROM tesoreria t, detalle_tesoreria dt WHERE t.Id = 1 AND dt.Id_tesoreria = 1 AND dt.Id_persona = '$id_persona'";
+		$sqlIP = "SELECT t.Valor AS Valor, dt.Abono AS Abono, t.Detalle AS Detalle FROM tesoreria t LEFT JOIN detalle_tesoreria dt ON dt.Id_persona = '$id_persona' WHERE t.Id = 1";
 		$sentenciaIP = $conexion -> prepare($sqlIP);
 		$sentenciaIP -> execute();
 		$inscripcion = $sentenciaIP -> fetch(PDO::FETCH_ASSOC);
@@ -61,6 +61,9 @@ switch ($accion) {
 			$valores = array(0, 0, 'Inscripcion 2019');
 			$resultado = array_combine($claves, $valores);
 		} else {
+			if (empty($inscripcion['Abono'])) {
+				$inscripcion['Abono'] = '0';
+			}
 			$resultado = $inscripcion;
 		}
 		echo json_encode($resultado);

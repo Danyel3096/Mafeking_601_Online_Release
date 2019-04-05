@@ -51,15 +51,16 @@ if(!ControlSesion :: sesionIniciada()) {
           </div>
         <?php
         } else if ($id_cargo == '28') {?>
-          <button class="dropdown-btn"><i class="fas fa-boxes"></i> Intendencia<i class="fa fa-caret-down"></i></button>
-          <div class="dropdown-container">
-            <a href="<?php echo RUTA_GESTOR_INTENDENCIA ?>" class="opcion" id="Intendencia"><i class="fas fa-dumpster-fire"></i> Estado</a>
-            <a href="<?php echo RUTA_INTENDENCIA_REGISTRO ?>"><i class="fas fa-folder-plus"></i> Registro</a>
-            <a href="<?php echo RUTA_INTENDENCIA_DETALLE ?>"><i class="fas fa-folder-open"></i> Detalle</a>
-          </div>
+          <a href="<?php echo RUTA_GESTOR_INTENDENCIA ?>" class="opcion" id="Intendencia"><i class="fas fa-warehouse"></i> Intendencia</a>
         <?php
         } else if ($id_cargo == '1' || $id_cargo == '2' || $id_cargo == '3' || $id_cargo == '4' || $id_cargo == '5' || $id_cargo == '6' || $id_cargo == '7' || $id_cargo == '8' || $id_cargo == '9' || $id_cargo == '10') {?>
           <a href="<?php echo RUTA_GESTOR_CARGOS ?>"><i class="fas fa-id-card opcion"></i> Cargos <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Cargos" hidden></i></a>
+          <button class="dropdown-btn"><i class="fas fa-calendar-alt"></i> Eventos<i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="<?php echo RUTA_GESTOR_EVENTOS ?>"><i class="fas fa-user-friends"></i> Participantes <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Eventos" hidden></i></a>
+            <a href="<?php echo RUTA_GESTOR_CALENDARIO ?>"><i class="far fa-calendar-plus"></i> Calendario <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Calendario" hidden></i></a>
+          </div>
           <button class="dropdown-btn"><i class="fas fa-shoe-prints"></i> Progresiones<i class="fa fa-caret-down"></i></button>
           <div class="dropdown-container">
             <a href="<?php echo RUTA_GESTOR_PROGRESIONES ?>"><i class="fas fa-chart-line"></i> Estadística <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Progresiones" hidden></i></a>
@@ -75,16 +76,10 @@ if(!ControlSesion :: sesionIniciada()) {
             <a href="<?php echo RUTA_RAMA_FUNDAMENTOS ?>"><i class="fas fa-file-signature"></i> Fundamentos <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Fundamentos" hidden></i></a>
             <a href="<?php echo RUTA_RAMA_PARTICIPACIONES ?>"><i class="fas fa-calendar-week"></i> Participaciones <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Participaciones" hidden></i></a>
           </div>
+          <a href="<?php echo RUTA_GESTOR_NOTICIA ?>"><i class="fas fa-newspaper"></i> Noticias <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Noticias" hidden></i></a>
         <?php
         }
         ?>
-          <button class="dropdown-btn"><i class="fas fa-calendar-alt"></i> Eventos<i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-container">
-            <a href="<?php echo RUTA_GESTOR_EVENTOS ?>"><i class="fas fa-user-friends"></i> Participantes <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Eventos" hidden></i></a>
-            <a href="<?php echo RUTA_GESTOR_CALENDARIO ?>"><i class="far fa-calendar-plus"></i> Calendario <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Calendario" hidden></i></a>
-          </div>
-          <a href="<?php echo RUTA_GESTOR_NOTICIA ?>"><i class="fas fa-newspaper"></i> Noticias <i class="fas fa-arrow-alt-circle-right fa-lg opcion" id="Noticias" hidden></i></a>
         <?php if($id_cargo == '1' || $id_cargo == '2' || $id_cargo == '15' || $id_cargo == '16') {?>
           <a href="<?php echo RUTA_GESTOR_ORGANIGRAMA ?>"><i class="fas fa-sitemap"></i> Organigrama</a>
         <?php } ?>

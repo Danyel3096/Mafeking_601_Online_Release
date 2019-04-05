@@ -24,22 +24,24 @@ include_once 'App/Controladores/ControlSesion.php';
 		$detalle_cargo = DAODetalleCargo :: consultarDetalleCargoPorIdPersona($conexion, $id_persona);
 		$equipo = DAOEquipo :: consultarEquipoPorId($conexion, $detalle_cargo -> obtenerIdEquipo());
 		$rama = DAORama :: consultarRamaPorId($conexion, $equipo -> obtenerIdRama());
+
+		$id_cargo = $detalle_cargo -> obtenerIdCargo();
 		$id_rama = $rama -> obtenerId();
 
-		if ($id_rama == '6') : ?>
+		if ($id_rama == '6' || $id_cargo == '3' || $id_cargo == '4') : ?>
 			<link rel="stylesheet" href="<?php echo RUTA_CSS ?>EstiloManada.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/yellow/pace-theme-minimal.min.css">
-		<?php elseif ($id_rama == '5') : ?>
+		<?php elseif ($id_rama == '5' || $id_cargo == '5' || $id_cargo == '6') : ?>
 			<link rel="stylesheet" href="<?php echo RUTA_CSS ?>EstiloTropa.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/green/pace-theme-minimal.min.css">
-		<?php elseif ($id_rama == '4') : ?>
+		<?php elseif ($id_rama == '4' || $id_cargo == '7' || $id_cargo == '8') : ?>
 			<link rel="stylesheet" href="<?php echo RUTA_CSS ?>EstiloComunidad.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
-		<?php elseif ($id_rama == '3') : ?>
+		<?php elseif ($id_rama == '3' || $id_cargo == '9' || $id_cargo == '10') : ?>
 			<link rel="stylesheet" href="<?php echo RUTA_CSS ?>EstiloClan.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/red/pace-theme-minimal.min.css">
-		<?php elseif ($id_rama == '1') : ?>
-			<link rel="stylesheet" href="<?php echo RUTA_CSS ?>EstiloJefatura.css">
+		<?php elseif ($id_rama == '1' || $id_rama == '2') : ?>
+			<link rel="stylesheet" href="<?php echo RUTA_CSS ?>EstiloGeneral.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/silver/pace-theme-minimal.min.css">
 		<?php endif;
 	} else {?>

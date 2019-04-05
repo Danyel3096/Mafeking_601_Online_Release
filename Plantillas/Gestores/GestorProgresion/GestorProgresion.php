@@ -35,7 +35,7 @@ if(!ControlSesion :: sesionIniciada()) {
   </tbody>
 </table>
 <div class="espacio-pagina"></div>
-<div id="estadisticas-progresion-clan" name="estadisticas-progresion-clan" hidden>
+<div id="estadisticas-progresion-manada" name="estadisticas-progresion-manada" hidden>
 <table>
   <thead>
     <tr>
@@ -81,7 +81,8 @@ if(!ControlSesion :: sesionIniciada()) {
   </tbody>
 </table>
 <div class="espacio-pagina"></div>
-
+</div>
+<div id="estadisticas-progresion-comunidad" name="estadisticas-progresion-comunidad" hidden>
 <h3>Eje Transversal</h3>
 <hr>
 <table>
@@ -225,7 +226,8 @@ if(!ControlSesion :: sesionIniciada()) {
   </tbody>
 </table>
 <div class="espacio-pagina"></div>
-
+</div>
+<div id="estadisticas-progresion-clan" name="estadisticas-progresion-clan" hidden>
 <h3>Eje Estructural</h3>
 <hr>
 <table>
@@ -442,7 +444,7 @@ if(!ControlSesion :: sesionIniciada()) {
       <td><div id="porcentaje-ultima-insignia"></div></td>
     </tr>
     <tr>
-      <td><div id="umbral-investidura">7/10</div></td>
+      <td><button type="button" class="btn btn-info btn-icono" name="btn-ver-listado-especialidad" data-toggle="modal" data-target="#modal-listado-especialidad" value="18"><i class="far fa-eye"></i></button></td>
     </tr>
   </tbody>
 </table>

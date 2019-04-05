@@ -404,16 +404,3 @@ var cadena_json = {
       }
     ]
 };
-function comentariosNoticia() {
-  var id_noticia = $("#id-noticia-actual").val();
-  var accion = "comentarios-noticia";
-  var cadena = "Id-noticia="+id_noticia+"&accion="+accion;
-  $.ajax({
-    method:'POST',
-    url:"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAONoticias.php",
-    data:cadena,
-    success:function(datos){
-      $("#seccion-comentarios").html(datos);
-    }
-  });
-}

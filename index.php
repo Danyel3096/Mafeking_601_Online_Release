@@ -9,6 +9,10 @@ include_once 'App/DAO/DAONoticia.php';
 include_once 'App/Controladores/ControlSesion.php';
 include_once 'App/Redireccion.php';
 
+Conexion :: abrirConexion();
+$conexion = Conexion :: obtenerConexion();
+$sesion_usuario = ControlSesion::sesionIniciada();
+
 $componentes_url = parse_url($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
 $ruta = $componentes_url['path'];
 $partes_ruta = explode('/', $ruta);

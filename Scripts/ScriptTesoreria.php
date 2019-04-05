@@ -179,11 +179,29 @@ var limpiarTesoreria = function() {
   var id_rama = $('#id-rama').val('');
 }
 $(document).ready(function() {
+  $("#btn-guardar-inscripcion").prop("disabled", true);
   $("input[name=inscripcion-rama]").each(function(){
     $(this).on('click', function() {
+      if ($.fn.DataTable.isDataTable('#tabla-inscripcion')) {
+        $("#tabla-inscripcion").dataTable().fnDestroy();
+        $('#tabla-inscripcion').empty();
+      }
       id_rama = $(this).val();
       listarInscripcion(id_rama);
     });
+  });
+  $("#abonoinscripcion").blur(function(){
+    var abono = $(this).val();
+    var valor = $("#valor-inscripcion").val();
+    if (abono > valor) {
+      alertify.error('El abono no puede ser mayor que el valor');
+      $("#btn-guardar-inscripcion").prop("disabled", true);
+    } if (abono < 0) {
+      alertify.error('El abono no puede ser menor a cero');
+      $("#btn-guardar-inscripcion").prop("disabled", true);
+    } else {
+      $("#btn-guardar-inscripcion").prop("disabled", false);
+    }
   });
   $("#btn-guardar-inscripcion").click(function() {
     guardarInscripcion();
@@ -192,6 +210,12 @@ $(document).ready(function() {
 var listarInscripcion = function(id_rama) {
   var tabla = $("#tabla-inscripcion").DataTable({
     "destroy":true,
+    "headerCallback": function( thead, data, start, end, display ) {
+      $(thead).find('th').eq(0).html( 'Nombres' );
+      $(thead).find('th').eq(1).html( 'Apellidos' );
+      $(thead).find('th').eq(2).html( 'Inscripción' );
+      $(thead).find('th').eq(3).html( 'Acción' );
+    },
     "ajax":{
       "method":"POST",
       "url":"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAOTesoreria.php",

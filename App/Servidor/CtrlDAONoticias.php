@@ -25,6 +25,11 @@ if(isset($_POST['Cuerpo-noticia']) && !empty($_POST['Cuerpo-noticia'])) {
 		$cuerpo_noticia = $_POST['Cuerpo-noticia'];
 	}
 }
+if(isset($_POST['Cuerpo-comentario']) && !empty($_POST['Cuerpo-comentario'])) {
+	if (strlen($_POST['Cuerpo-comentario']) >= 3) {
+		$texto_comentario = $_POST['Cuerpo-comentario'];
+	}
+}
 if(isset($_POST['Estado-noticia']) && !empty($_POST['Estado-noticia'])) {
 	if (strlen($_POST['Estado-noticia']) >= 3 && strlen($_POST['Estado-noticia']) <= 12) {
 		$estado_noticia = $_POST['Estado-noticia'];
@@ -74,13 +79,13 @@ switch ($accion) {
 		echo json_encode($arreglo);
 		break;
 	case 'insertar-comentario':
-		$sql = "INSERT INTO comentarios (Texto, Fecha, Hora, Id_noticia) VALUES ('$texto_comentario', NOW(), NOW(), '$id_noticia_comentario')";
+		$sql = "INSERT INTO comentarios (Texto, Fecha, Hora, Id_noticia, Id_persona) VALUES ('$texto_comentario', NOW(), NOW(), '$id_noticia', '$id_persona')";
 		$sentencia = $conexion -> prepare($sql);
 		$respuesta = $sentencia -> execute();
 		echo $respuesta;
 		break;
 	case 'comentarios-noticia':
-		$sql = "SELECT * FROM comentarios WHERE Id_noticia = '$id_noticia'";
+		$sql = "SELECT c.Texto, c.Fecha, c.Hora, hv.Foto, p.Nombres, p.Apellidos FROM comentarios c LEFT JOIN personas p ON c.Id_persona = p.Id LEFT JOIN hojas_vida hv ON p.Id = hv.Id WHERE Id_noticia = '$id_noticia'";
 		$sentencia = $conexion -> prepare($sql);
 		$sentencia -> execute();
 		$comentarios_noticia = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
@@ -90,16 +95,23 @@ switch ($accion) {
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-body">
-								<div class="col-md-2">
-									<?php echo $comentarios_noticia[$i]['Nombre_comentarista']; ?>
-								</div>
-								<div class="col-md-10">
-									<p>
-									<?php echo $comentarios_noticia[$i]['Fecha']." a las ".$comentarios_noticia[$i]['Hora']; ?>
-									</p>
-									<p>
-									<?php echo nl2br($comentarios_noticia[$i]['Texto']); ?>
-									</p>
+								<div class="row">
+									<div class="col-md-3">
+									<img id="img-persona-comentario" src="<?php if(!empty($comentarios_noticia[$i]['Foto'])) {
+										echo SERVIDOR.'/Archivos/Subidas/Perfiles/Fotos/'.$comentarios_noticia[$i]['Foto'];
+									} else {
+										echo SERVIDOR.'/Archivos/Imagenes/usuario.jpg';
+									} ?>" />
+									<?php echo $comentarios_noticia[$i]['Nombres']." ".$comentarios_noticia[$i]['Apellidos']; ?>
+									</div>
+									<div class="col-md-9">
+										<p>
+										<?php echo $comentarios_noticia[$i]['Fecha']." a las ".$comentarios_noticia[$i]['Hora']; ?>
+										</p>
+										<p>
+										<?php echo nl2br($comentarios_noticia[$i]['Texto']); ?>
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -107,11 +119,11 @@ switch ($accion) {
 				</div>
 			<?php }
 		} else { ?>
-			<div class="row">
+			<!--<div class="row">
 				<div class="col-md-12 text-center">
 				TODAVIA NO HAY COMENTARIOS
 				</div>
-			</div>
+			</div>-->
 		<?php }
 		break;
 }
