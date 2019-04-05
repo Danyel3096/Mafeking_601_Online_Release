@@ -88,6 +88,7 @@ var accion = "accion="+"departamentos";
     	url:"<?php echo SERVIDOR ?>/App/Servidor/CtrlDAORegistro.php",
     	data:accion,
     	success:function(data){
+alert(data);
 	    	$("#departamento").html(data);
 	    }
 	});
