@@ -122,10 +122,10 @@ Conexion :: abrirConexion();
                 </form>
                 <div class="form-row">
                     <div class="col-md-6">
-                        <img id="ficha-evento" />
+                        <img id="ficha-evento" src="" alt="" />
                     </div>
                     <div class="col-md-6">
-                        <img id="insignia-evento" />
+                        <img id="insignia-evento" src="" alt="" />
                     </div>
                 </div>
             </div>
