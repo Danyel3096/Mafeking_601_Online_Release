@@ -22,7 +22,7 @@ if(isset($_POST['btn-sesion'])) {
     Conexion :: cerrarConexion();
 }
 ?>
-<script type="text/javascript">
+<script>
 $(document).ready(function(){
 	var titulos = [
 	<?php for ($i=0; $i < count($resultado); $i++) {  ?>
