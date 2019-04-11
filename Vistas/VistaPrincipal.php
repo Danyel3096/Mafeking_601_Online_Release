@@ -52,35 +52,35 @@ Conexion :: abrirConexion();
   					</ol>
   					<div class="carousel-inner">
     					<div class="carousel-item active">
-                            <a href="<?php echo RUTA_GRUPO ?>" target="_blank"><img id="imagen-rama-grupo" class="d-block w-100" alt="First slide"></a>
+                            <a href="<?php echo RUTA_GRUPO ?>" target="_blank"><img id="imagen-rama-grupo" src="" class="d-block w-100" alt="First slide"></a>
       						<div class="carousel-caption d-none d-md-block">
     							<h5>GRUPO 601 MAFEKING</h5>
     							<p>¡Conoce nuestra historia!</p>
   							</div>
 					    </div>
     					<div class="carousel-item">
-      						<a href="<?php echo RUTA_MANADA ?>" target="_blank"><img class="d-block w-100" id="imagen-rama-manada" alt="Second slide"></a>
+      						<a href="<?php echo RUTA_MANADA ?>" target="_blank"><img class="d-block w-100" id="imagen-rama-manada" src="" alt="Second slide"></a>
       						<div class="carousel-caption d-none d-md-block">
     							<h5>MANADA</h5>
     							<p>¡Con alegría, has de ser cada día mejor!</p>
   							</div>
     					</div>
     					<div class="carousel-item">
-      						<a href="<?php echo RUTA_TROPA ?>" target="_blank"><img class="d-block w-100" id="imagen-rama-tropa" alt="Third slide"></a>
+      						<a href="<?php echo RUTA_TROPA ?>" target="_blank"><img class="d-block w-100" id="imagen-rama-tropa" src="" alt="Third slide"></a>
       						<div class="carousel-caption d-none d-md-block">
     							<h5>TROPA</h5>
     							<p>¡Listos para la aventura!</p>
   							</div>
     					</div>
                         <div class="carousel-item">
-                            <a href="<?php echo RUTA_COMUNIDAD ?>" target="_blank"><img id="imagen-rama-comunidad" class="d-block w-100" alt="Third slide"></a>
+                            <a href="<?php echo RUTA_COMUNIDAD ?>" target="_blank"><img id="imagen-rama-comunidad" class="d-block w-100" src="" alt="Third slide"></a>
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>COMUNIDAD</h5>
                                 <p>¡Caminante no hay camino, se hace camino al andar, adelante!</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <a href="<?php echo RUTA_CLAN ?>" target="_blank"><img id="imagen-rama-clan" class="d-block w-100" alt="Third slide"></a>
+                            <a href="<?php echo RUTA_CLAN ?>" target="_blank"><img id="imagen-rama-clan" class="d-block w-100" src="" alt="Third slide"></a>
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>CLAN</h5>
                                 <p>¡Al servir, dejamos el mundo en mejores condiciones de como lo encontramos!</p>
