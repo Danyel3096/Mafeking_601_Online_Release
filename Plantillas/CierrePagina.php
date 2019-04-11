@@ -48,17 +48,17 @@ Conexion :: cerrarConexion();
 					<tr>
 						<td>
 							<a href="http://www.vallescout.org.co/" target="_blank">
-								<img src="<?php echo SERVIDOR.'/Archivos/Imagenes/Logos/Valle_del_Cauca_Scout.png' ?>" height="50">
+								<img src="<?php echo SERVIDOR.'/Archivos/Imagenes/Logos/Valle_del_Cauca_Scout.png' ?>" height="50" alt="">
 							</a>
 						</td>
   						<td>
   							<a href="https://www.scout.org.co/" target="_blank">
-  								<img src="<?php echo SERVIDOR.'/Archivos/Imagenes/Logos/Colombia_Scout.png' ?>" height="65">
+  								<img src="<?php echo SERVIDOR.'/Archivos/Imagenes/Logos/Colombia_Scout.png' ?>" height="65" alt="">
   							</a>
   						</td>
   						<td>
   							<a href="https://www.scout.org/" target="_blank">
-  								<img src="<?php echo SERVIDOR.'/Archivos/Imagenes/Logos/Mundo_Scout.png' ?>" height="45">
+  								<img src="<?php echo SERVIDOR.'/Archivos/Imagenes/Logos/Mundo_Scout.png' ?>" height="45" alt="">
   							</a>
   						</td>
   					</tr>
