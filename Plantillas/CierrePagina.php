@@ -68,7 +68,7 @@ Conexion :: cerrarConexion();
 	</div>
 	<div class="row autoria">
 		<div class="col-md-12">
-			<center><strong>© 2018-2019. Todos los derechos reservados.</strong></center>
+			<div id="derechos-reservados"><strong>© 2018-2019. Todos los derechos reservados.</strong></div>
 		</div>
 	</div>
 </div>
