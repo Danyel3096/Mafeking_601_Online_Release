@@ -8,7 +8,7 @@
 	<div class="col-md-3">
 		<div class="form-group">
 			<label><strong>Fecha de inicio</strong></label><span class="obligatorio">*</span>
-			<input type="date" class="form-control" id="fechainicioevento" name="fechainicioevento" placeholder="Fecha de inicio" required />
+			<input type="date" class="form-control" id="fechainicioevento" name="fechainicioevento" required />
 		</div>
 	</div>
 	<div class="col-md-3">
