@@ -1,3 +1,7 @@
+#derechos-reservados {
+	margin: auto !important;
+}
+
 .fc-view, .fc-view>table{
 	z-index: 0 !important;
 }
