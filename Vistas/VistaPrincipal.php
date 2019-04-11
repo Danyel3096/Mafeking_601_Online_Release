@@ -42,7 +42,7 @@ Conexion :: abrirConexion();
 		</div>
 		<div class="col-md-7 sin-espaciado-izquierda">
 			<div class="row ajuste-diapositiva">
-				<div id="carrusel" name="carrusel" class="carousel slide" data-ride="carousel">
+				<div id="carrusel" class="carousel slide" data-ride="carousel">
   					<ol class="carousel-indicators">
     					<li data-target="#carrusel" data-slide-to="0" class="active"></li>
     					<li data-target="#carrusel" data-slide-to="1"></li>
