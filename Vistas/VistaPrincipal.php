@@ -34,7 +34,7 @@ Conexion :: abrirConexion();
                             <h4>Youtube</h4>
                         </div>
                         <div class="card-body menos-espaciado">
-                            <iframe width="450" height="250" src="https://www.youtube.com/embed/videoseries?list=UUEFIobTH6R69Og1tDk4XwEQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe width="450" height="250" src="https://www.youtube.com/embed/videoseries?list=UUEFIobTH6R69Og1tDk4XwEQ" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
