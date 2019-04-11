@@ -42,7 +42,7 @@ $(document).ready(function(){
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<img src="<?php echo SERVIDOR ?>/favicon.ico" id="favicon-nav" /><a class="navbar-brand mb-0 h1" href="<?php echo SERVIDOR ?>">Mafeking 601</a>
+	<img src="<?php echo SERVIDOR ?>/favicon.ico" id="favicon-nav" alt="" /><a class="navbar-brand mb-0 h1" href="<?php echo SERVIDOR ?>">Mafeking 601</a>
 	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<?php if(!$sesion_usuario) { ?>
 		<ul class="navbar-nav mr-auto">
@@ -94,7 +94,7 @@ $(document).ready(function(){
     					<i class="far fa-address-card"></i> Inicia sesión
   					</button>
   				<div class="dropdown-menu dropdown-menu-right inicio-sesion">
-  					<form class="px-2 py-1" role="form" method="post" action="<?php echo RUTA_INICIO_SESION ?>">
+  					<form class="px-2 py-1" method="post" action="<?php echo RUTA_INICIO_SESION ?>">
     					<div class="form-group">
       						<label for="texto">Correo electrónico</label>
       						<input type="text" class="form-control" id="texto" name="texto" placeholder="Correo electrónico" required>
