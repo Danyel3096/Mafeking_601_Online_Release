@@ -8,14 +8,14 @@
 	<div class="col-md-3">
 		<div class="form-group">
 			<label><strong>Fecha de inicio</strong></label><span class="obligatorio">*</span>
-			<input type="date" class="form-control" id="fechainicioevento" name="fechainicioevento" required />
+			<input type="text" class="form-control" id="fechainicioevento" name="fechainicioevento" required />
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="form-group">
 			<label><strong>Hora inicio</strong></label><span class="obligatorio">*</span>
             <div class="input-group clockpicker" data-autoclose="true">
-                <input type="time" id="horainicio" name="horainicio" class="form-control" required />
+                <input type="text" id="horainicio" name="horainicio" class="form-control" required />
             </div>
 		</div>
 	</div>
@@ -30,14 +30,14 @@
 	<div class="col-md-4">
 		<div class="form-group">
 			<label><strong>Fecha cierre</strong></label><span class="obligatorio">*</span>
-            <input type="date" id="fechafinevento" name="fechafinevento" class="form-control" required />
+            <input type="text" id="fechafinevento" name="fechafinevento" class="form-control" required />
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="form-group">
 			<label><strong>Hora cierre</strong></label><span class="obligatorio">*</span>
             <div class="input-group clockpicker" data-autoclose="true">
-                <input type="time" id="horafin" name="horafin" class="form-control" value="06:00" required />
+                <input type="text" id="horafin" name="horafin" class="form-control" value="06:00" required />
             </div>
 		</div>
 	</div>
@@ -60,14 +60,14 @@
 	<div class="col-md-4">
 		<div class="form-group">
 			<label id="labelfechaencuentroevento"><strong>Fecha encuentro</strong></label>
-            <input type="date" id="fechaencuentroevento" name="fechaencuentroevento" class="form-control" />
+            <input type="text" id="fechaencuentroevento" name="fechaencuentroevento" class="form-control" />
 		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="form-group">
 			<label id="labelhoraencuentro"><strong>Hora encuentro</strong></label><span class="obligatorio">*</span>
             <div class="input-group clockpicker" data-autoclose="true">
-                <input type="time" id="horaencuentro" name="horaencuentro" class="form-control" required />
+                <input type="text" id="horaencuentro" name="horaencuentro" class="form-control" required />
             </div>
 		</div>
 	</div>
