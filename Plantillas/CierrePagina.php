@@ -15,7 +15,7 @@ Conexion :: cerrarConexion();
 		</div>
 		<div class="col-md-6">
 			<h4>Redes sociales</h4>
-			<table name="tabla-cierre-pagina" id="tabla-cierre-pagina">
+			<table id="tabla-cierre-pagina">
 				<tbody>
   					<tr>
   						<td><i class="fab fa-facebook fa-3x"></i></td>
