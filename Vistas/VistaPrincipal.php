@@ -132,7 +132,7 @@ Conexion :: abrirConexion();
         </div>
     </div>
 </div>
-<script type="text/javascript">
+<script>
 $(document).ready(function() {
   var fecha = new Date();
   var anio = fecha.getFullYear();
