@@ -84,13 +84,13 @@ include_once 'App/Controladores/ControlSesion.php';
 	<script src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.colVis.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.flash.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.html5.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/rowgroup/1.1.0/js/dataTables.rowGroup.min.js"></script>
+	<script src="https://cdn.datatables.net/rowgroup/1.1.0/js/dataTables.rowGroup.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js" integrity="sha256-VupM2GVVXK2c3Smq5LxXjUHBZveWTs35hu1al6ss6kk=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://cdn.knightlab.com/libs/timeline3/3.6.3/js/timeline-min.js"></script>
+	<script src="https://cdn.knightlab.com/libs/timeline3/3.6.3/js/timeline-min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js" integrity="sha256-2XpjfLL5tRYLa3AAM0gz6aAY0zxvHogDzTWemxkTPDg=" crossorigin="anonymous"></script>
 </head>
 <body>
