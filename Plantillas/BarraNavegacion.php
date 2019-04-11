@@ -70,11 +70,13 @@ $(document).ready(function(){
 		</ul>
 		<?php } ?>
 		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
 			<form class="form-inline my-2 my-lg-0">
       			<input class="form-control mr-sm-2" type="search" placeholder="¿Qué buscas?" aria-label="Search" name="palabra-clave" id="palabra-clave">
       			<div id="coincidencias"></div>
 		    	<button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-    		</form>
+    			</form>
+			</li>
 			<?php if($sesion_usuario) { ?>
 			<li class="nav-item">
 				<a class="nav-link enlaces-nav" href="<?php echo RUTA_PERFIL ?>"><i class="far fa-user"></i> <?php echo ' ' . $_SESSION['nombre']; ?></a>
