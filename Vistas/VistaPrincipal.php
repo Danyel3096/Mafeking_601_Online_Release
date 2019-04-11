@@ -115,7 +115,7 @@ Conexion :: abrirConexion();
             <div class="modal-body">
                 <input type="hidden" id="id-evento" name="id-evento" />
                 <input type="hidden" id="id-rama-evento" name="id-rama-evento" value="<?php echo $id_rama; ?>" />
-                <form class="validar-formulario" id="formulario-evento" name="formulario-evento" role="form" method="post">
+                <form class="validar-formulario" id="formulario-evento" name="formulario-evento" method="post">
                     <?php
                     include_once 'Plantillas/Formularios/FormularioEvento.php';
                     ?>
